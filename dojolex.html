@@ -20,9 +20,9 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-md bg-dark">
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
         <div class="container-fluid">
-            <a class="navbar-brand" href="/index.html">dojolex</a>
+            <a class="navbar-brand" href="/index.html">dojolex.com</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
@@ -33,7 +33,9 @@
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="/dojolex.html">refresh</a>
                     </li>
-
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/dojolex.html">disable</a>
+                    </li>
 
 
                 </ul>
@@ -130,7 +132,11 @@
 
     <script>
 
-        var apiJson = [{ "id": 1, "question": "I bought a new Patek Philippe Nautilus as a gift for myself I could afford it because I just received my well-earned bonus.", "choice1": "NO CHANGE", "choice2": "myself, I could", "choice3": "myself, so", "choice4": "myself; I could", "correct": "myself; I could", "difficulty": 1, "tag": "Sentence Structure", "solution": "The original sentence is a run on.  (D) \"myself; I could\" is the best answer because it appropriately uses a semicolon to punctuate the break between two independent clauses." }, { "id": 2, "question": "Since Aatorx is too ear-piercingly loud; Seraphine cannot fall asleep", "choice1": "NO CHANGE", "choice2": "loud; therefore Seraphine", "choice3": "loud, Seraphine", "choice4": "loud Seraphine", "correct": "loud, Seraphine", "difficulty": 2, "tag": "Sentence Structure", "solution": "The original sentence incorrectly uses a semicolon to punctuate the break between a dependent clause and an independent clause.  (C) \"loud, Seraphine\" is the best answer because it appropriately uses a comma to punctuate the break between a dependent clause and an independent clause." }]
+        var apiJson = [
+
+            { "id": 1, "question": "I bought a new Patek Philippe Nautilus as a gift for myself I could afford it because I just received my well-earned bonus.", "choice1": "NO CHANGE", "choice2": "myself, I could", "choice3": "myself, so", "choice4": "myself; I could", "correct": "myself; I could", "difficulty": 1, "tag": "Sentence Structure", "solution": "The original sentence is a run on.  (D) \"myself; I could\" is the best answer because it appropriately uses a semicolon to punctuate the break between two independent clauses." }, { "id": 2, "question": "Since Aatorx is too ear-piercingly loud; Seraphine cannot fall asleep", "choice1": "NO CHANGE", "choice2": "loud; therefore Seraphine", "choice3": "loud, Seraphine", "choice4": "loud Seraphine", "correct": "loud, Seraphine", "difficulty": 2, "tag": "Sentence Structure", "solution": "The original sentence incorrectly uses a semicolon to punctuate the break between a dependent clause and an independent clause.  (C) \"loud, Seraphine\" is the best answer because it appropriately uses a comma to punctuate the break between a dependent clause and an independent clause." }, { "id": 3, "question": "Marcus Kim, whose polymer sculptures often portray sub tropical scenes such as snorkeling or sailing, drawing his inspiration from Palawan stone carvings he saw while vacationing on Coron Island.", "choice1": "NO CHANGE", "choice2": "drew", "choice3": "taking", "choice4": "having drew", "correct": "drew", "difficulty": 1, "tag": "Sentence Structure", "solution": "The original sentence is a fragment.  (B) \"drew\" is the best answer because it turns the fragment into a sentence." }, { "id": 4, "question": "Won Bin pretended to be interested in his girlfriend’s hobby he secretly wished he had stayed home.", "choice1": "NO CHANGE", "choice2": "hobby; and he", "choice3": "hobby; he", "choice4": "hobby; so he", "correct": "hobby; he", "difficulty": 2, "tag": "Sentence Structure", "solution": "The original sentence is a run on.  (C) \"hobby; he\" is the best answer because it appropriately uses a semi colon to punctuate the break between two independent clauses." }, { "id": 5, "question": "Feeling that the board of directors had too hastily settled several crucial issues: Chairman Wei Bo asked that further deliberation be given to his subordinate’s unconventional proposal.", "choice1": "NO CHANGE", "choice2": "issues, Chairman", "choice3": "issues Chairman", "choice4": "issues; Chairman", "correct": "issues, Chairman", "difficulty": 1, "tag": "Sentence Structure", "solution": "The original sentence incorrectly uses a colon at the end of dependent clause.  (B) \"issues, Chairman\" is the best answer because it appropriately uses a comma to punctuate the break between the dependent clause (Feeling that… issues) and the independent clause (Chairman Wei Bo … proposal.)" }]
+
+
 
         var grammarApi = ['api empty']
         var grammarOutput = []
