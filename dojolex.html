@@ -20,6 +20,27 @@
 </head>
 
 <body>
+    <nav class="navbar navbar-expand-md bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/index.html">dojolex</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/dojolex.html">refresh</a>
+                    </li>
+
+
+
+                </ul>
+
+            </div>
+        </div>
+    </nav>
 
     <div class="container my-3">
         <div class="d-flex justify-content-between pb-1">
@@ -158,12 +179,16 @@
             progressDone += 10
             if (ans.dataset.id === currentQuestion.correct) {
 
+                ans.classList.remove("border-dark");
                 ans.classList.toggle("bg-success");
                 ans.classList.toggle("border-success");
 
 
             } else {
+
                 cA = document.getElementById(correctChoice);
+                ans.classList.remove("border-dark");
+                cA.classList.remove("border-dark");
                 cA.classList.add("border-success");
                 ans.classList.toggle("bg-secondary");
                 ans.classList.toggle("border-danger");
@@ -240,10 +265,10 @@
         document.getElementById('next').addEventListener("click", updateQuestion)
 
         function updateQuestion() {
-            a.classList.remove("bg-success", "border-success", "bg-secondary", "border-secondary", "border-danger");
-            b.classList.remove("bg-success", "border-success", "bg-secondary", "border-secondary", "border-danger");
-            c.classList.remove("bg-success", "border-success", "bg-secondary", "border-secondary", "border-danger");
-            d.classList.remove("bg-success", "border-success", "bg-secondary", "border-secondary", "border-danger");
+            a.classList.remove("bg-success", "border-success", "bg-secondary", "border-secondary", "border-danger", "border-dark");
+            b.classList.remove("bg-success", "border-success", "bg-secondary", "border-secondary", "border-danger", "border-dark");
+            c.classList.remove("bg-success", "border-success", "bg-secondary", "border-secondary", "border-danger", "border-dark");
+            d.classList.remove("bg-success", "border-success", "bg-secondary", "border-secondary", "border-danger", "border-dark");
             hideSolution()
 
             q += 1;
