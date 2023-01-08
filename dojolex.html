@@ -189,7 +189,7 @@
                 cA = document.getElementById(correctChoice);
                 ans.classList.remove("border-dark");
                 cA.classList.remove("border-dark");
-                cA.classList.add("border-success");
+                cA.classList.add("fw-bold", "border-success", "border-3");
                 ans.classList.toggle("bg-secondary");
                 ans.classList.toggle("border-danger");
                 console.log(correctChoice)
@@ -265,10 +265,10 @@
         document.getElementById('next').addEventListener("click", updateQuestion)
 
         function updateQuestion() {
-            a.classList.remove("bg-success", "border-success", "bg-secondary", "border-secondary", "border-danger", "border-dark");
-            b.classList.remove("bg-success", "border-success", "bg-secondary", "border-secondary", "border-danger", "border-dark");
-            c.classList.remove("bg-success", "border-success", "bg-secondary", "border-secondary", "border-danger", "border-dark");
-            d.classList.remove("bg-success", "border-success", "bg-secondary", "border-secondary", "border-danger", "border-dark");
+            a.classList.remove("bg-success", "border-success", "bg-secondary", "border-secondary", "border-danger", "border-dark", "fw-bold", "border-3");
+            b.classList.remove("bg-success", "border-success", "bg-secondary", "border-secondary", "border-danger", "border-dark", "fw-bold", "border-3");
+            c.classList.remove("bg-success", "border-success", "bg-secondary", "border-secondary", "border-danger", "border-dark", "fw-bold", "border-3");
+            d.classList.remove("bg-success", "border-success", "bg-secondary", "border-secondary", "border-danger", "border-dark", "fw-bold", "border-3");
             hideSolution()
 
             q += 1;
