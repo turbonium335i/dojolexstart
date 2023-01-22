@@ -44,7 +44,7 @@
             </div>
         </div>
     </nav>
-    <div class="container pt-3">
+    <div class="container pt-3 px-0">
         <div class="d-flex flex-wrap">
             <div class="col-md-8 col-12 border border-primary px-0">
                 <div class="progress bg-danger" style="border-radius: 0%; height: 7px;">
@@ -55,7 +55,7 @@
                 <div class="bg-dark py-3 text-warning text-center h3">Core Set: One</div>
                 <div class="container">
                     <div class="text-center my-3">
-                        <div class="h5">indefinite, cautious, timid, diffident, unsettled </div>
+                        <div class="h5" id="defBox">indefinite, cautious, timid, diffident, unsettled </div>
 
                         <form id="myform" action="" method="" target="">
                             <label for="fname">&#8645;</label><br><br>
@@ -78,7 +78,7 @@
                 <div class="container">
                     <div class="text-center my-3">
                         <div class="h5 mb-2">Word Bank <i class="bi bi-soundwave"></i></div>
-                        <div class="d-flex justify-content-center flex-wrap">
+                        <div class="d-flex justify-content-center flex-wrap" id="wordbank">
                             <div class="border border-primary p-1" id="read" data-word="diffident"
                                 style="cursor: pointer;" onclick="speak('diffident')">diffident</div>
                             <div class="border p-1" style="cursor: pointer;" onclick="speak('tentative')">tentative
@@ -86,10 +86,7 @@
                             <div class="border p-1" style="cursor: pointer;" onclick="speak('sheepish')">sheepish</div>
                             <div class="border p-1" style="cursor: pointer;" onclick="speak('diffident')">diffident
                             </div>
-                            <div class="border p-1" style="cursor: pointer;" onclick="speak('tentative')">tentative
-                            </div>
-                            <div class="border p-1 border-primary" style="cursor: pointer;" onclick="speak('sheepish')">
-                                sheepish</div>
+
                         </div>
                         <br>
                         <button class="btn btn-lg btn-primary" onclick="location.reload() "><i
@@ -102,11 +99,13 @@
 
         </div>
     </div>
+    <div id="parent" class="container border mt-1"></div>
     <script src="https://code.jquery.com/jquery-3.6.3.js"
         integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
     <script type="text/javascript" src="/fettijs.js"></script>
 
 </body>
+<script src="/js/wordlist.js"></script>
 <script>
 
     let ti = 0;
@@ -260,5 +259,58 @@
 
 </script>
 
+<script>
+
+    let parent = document.querySelector('#parent');
+
+    function loadvocab() {
+
+        for (let i = 0; i < vocabulary.length; i++) {
+            let p = document.createElement('li');
+            p.classList = "text-primary list-unstyled fw-bold"
+            p.setAttribute("id", `WID${i}`);
+            p.textContent = `${i + 1}. ${vocabulary[i]['vocab']}  -- `
+            let span = document.createElement('span');
+            span.textContent = vocabulary[i]['meaning']
+            span.classList = "fw-normal text-dark"
+            p.appendChild(span);
+            let span2 = document.createElement('span');
+            span2.textContent = " -- " + vocabulary[i]['sentence']
+            span2.classList = "fw-normal text-primary"
+            p.appendChild(span2);
+
+
+            // p.textContent =  `${i + 1}. ${vocabulary[i]['vocab']} // ${vocabulary[i]['meaning']}`
+            parent.appendChild(p);
+        }
+
+    }
+
+    loadvocab()
+
+    function loadDef() {
+        var randomItem = vocabulary[Math.floor(Math.random() * vocabulary.length)];
+        console.log(randomItem)
+        var defBox = document.getElementById('defBox')
+        defBox.innerHTML = randomItem['meaning']
+        let word = document.createElement('div');
+        word.classList = "border p-1 border-danger"
+        word.textContent = randomItem['vocab']
+        word.setAttribute("onclick", `speak("${randomItem['vocab']}")`);
+        word.style = "cursor: pointer;"
+        var wordbank = document.getElementById("wordbank")
+        wordbank.appendChild(word)
+    }
+
+    loadDef()
+
+    document.getElementById("myform").addEventListener("submit", function (event) {
+        event.preventDefault()
+        loadDef()
+
+    });
+
+
+</script>
 
 </html>
