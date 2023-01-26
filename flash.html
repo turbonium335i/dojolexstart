@@ -23,7 +23,10 @@
 <body class="newbg">
     <nav class="navbar navbar-expand-md navbar-dark bg-dark">
         <div class="container-fluid">
-            <a class="navbar-brand" href="/index.html">dojolex.com</a>
+
+            <a class="navbar-brand" href="/index.html"><img
+                    src="https://i.postimg.cc/TwPQwwDF/204-2049751-network-icon-red-network-icon-png.png"
+                    style="max-width:30px;width:100%"> &nbsp;dojolex.com</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
@@ -228,14 +231,14 @@
         }
         if (textInput.value !== "") {
 
-            console.log(textInput.getAttribute('data-word'))
+            // console.log(textInput.getAttribute('data-word'))
 
             // Get speak text
             const speakText = new SpeechSynthesisUtterance(data);
 
             // Speak end
             speakText.onend = (e) => {
-                console.log("Done reading...");
+                console.log("Read Complete");
 
             };
 
@@ -290,7 +293,7 @@
 
     function loadDef() {
         var randomItem = vocabulary[Math.floor(Math.random() * vocabulary.length)];
-        console.log(randomItem)
+        // console.log(randomItem)
         var defBox = document.getElementById('defBox')
         defBox.innerHTML = randomItem['meaning']
         let word = document.createElement('div');
