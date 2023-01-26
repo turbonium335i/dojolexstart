@@ -500,10 +500,11 @@
             cQuestion = randomItem.question
 
 
-            document.getElementById("a").innerHTML = "A.   " + randomItem.choice1
-            document.getElementById("b").innerHTML = "B.   " + randomItem.choice2
-            document.getElementById("c").innerHTML = "C.   " + randomItem.choice3
-            document.getElementById("d").innerHTML = "D.   " + randomItem.choice4
+            document.getElementById("a").innerHTML = '<span class="fw-bold choice border border-dark px-1 rounded-circle" >A</span>&nbsp;&nbsp;' + randomItem.choice1
+            document.getElementById("b").innerHTML = '<span class="fw-bold choice border border-dark px-1 rounded-circle" >B</span>&nbsp;&nbsp;' + randomItem.choice2
+            document.getElementById("c").innerHTML = '<span class="fw-bold choice border border-dark px-1 rounded-circle" >C</span>&nbsp;&nbsp;' + randomItem.choice3
+            document.getElementById("d").innerHTML = '<span class="fw-bold choice border border-dark px-1 rounded-circle" >D</span>&nbsp;&nbsp;' + randomItem.choice4
+
 
             a.dataset.id = randomItem.choice1
             b.dataset.id = randomItem.choice2
