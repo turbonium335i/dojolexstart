@@ -201,7 +201,7 @@
 
 
                         <div class="   mb-2 crossout text-secondary  d-flex align-items-center"><span
-                                class="fw-bold choice border border-dark px-1 rounded-circle ms-1">A</span></div>
+                                class="fw-bold choice   px-1 rounded  ms-1" onclick="cross(a)">A</span></div>
                     </div>
 
 
@@ -213,21 +213,24 @@
                             style="cursor:pointer;">
                             A. Thisis a NO CHANGE.</div>
                         <div class="   mb-2 crossout text-secondary d-flex align-items-center"><span
-                                class="fw-bold choice border border-dark px-1 rounded-circle ms-1">B</span></div>
+                                class="fw-bold choice border border-dark px-1 rounded-circle ms-1"
+                                onclick="cross(b)">B</span></div>
                     </div>
                     <div class="d-flex ">
                         <div class="flex-grow-1 border border-secondary rounded mb-2 ms-lg-5 py-2 ps-2  " id="c"
-                            style="cursor:pointer;text-decoration: line-through;">
+                            style="cursor:pointer; ">
                             A. Thisis a NO CHANGE.</div>
                         <div class="   mb-2   text-secondary d-flex align-items-center"><span
-                                class="fw-bold choice border border-dark px-1 rounded-circle ms-1">C</span></div>
+                                class="fw-bold choice border border-dark px-1 rounded-circle ms-1"
+                                onclick="cross(c)">C</span></div>
                     </div>
                     <div class="d-flex ">
-                        <div class="flex-grow-1 border border-secondary rounded mb-2 ms-lg-5 py-2 ps-2  " id="d"
-                            style="cursor:pointer;">
+                        <div class="flex-grow-1 border border-secondary rounded mb-2 ms-lg-5 py-2 ps-2 crossout  "
+                            id="d" style="cursor:pointer;">
                             A. Thisis a NO CHANGE.</div>
                         <div class="   mb-2 crossout text-secondary d-flex align-items-center"><span
-                                class="fw-bold choice border border-dark px-1 rounded-circle ms-1">D</span></div>
+                                class="fw-bold choice border border-dark px-1 rounded-circle ms-1"
+                                onclick="cross(d)">D</span></div>
                     </div>
 
                     <!-- <div class=" border border-secondary rounded mb-2 mx-lg-5 py-2 ps-2" id="b" style="cursor:pointer;">
@@ -482,6 +485,13 @@
         d.addEventListener("click", function () {
             checkAnswer(d);
         });
+
+        function cross(x) {
+
+
+            x.classList.toggle("crossout");
+
+        }
 
 
 
