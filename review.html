@@ -70,10 +70,10 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="/dojolex.html">refresh</a>
+                        <a class="nav-link active" aria-current="page" href="/dojolex.html">SAT</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="/dojolex.html">disable</a>
+                        <a class="nav-link active" aria-current="page" href="/review.html">review</a>
                     </li>
 
 
@@ -104,11 +104,15 @@
             <h1 class="my-3">Check Your Work</h1>
 
             <div class="border container">
-                <h5 class="my-3 text-secondary">Section 1: Reading and Writing Questions</h5>
+                <div class="d-flex justify-content-center my-2">
+                    <div class="ms-3"> Current <i class="bi bi-geo-alt-fill text-dark"></i></div>
+                    <div class="ms-3"> Unanswered <i class="bi bi-bounding-box-circles"></i></div>
+                    <div class="ms-3"> Marked <i class="i bi-bookmark-fill text-danger"></i></div>
+                </div>
                 <hr>
                 <div id="questionNoBox" class="d-flex justify-content-start flex-wrap">
-                    <div class="border border-danger p-2 m-1">1</div>
-
+                    <div class="border border-danger p-2 m-1"><i class="bi bi-geo-alt-fill text-dark"></i> 1 </div>
+                    <div class="bg-primary p-2 m-1 text-light"><i class="bi bi-bookmark-fill text-danger"></i> 2 </div>
                 </div>
             </div>
             <div class="text-end me-lg-3 my-4 ">
@@ -162,7 +166,7 @@
             if (distance < 0) {
                 clearInterval(x);
                 document.getElementById("demo").innerHTML = "TIME UP";
-                window.location.href = '/index.html'
+                // window.location.href = '/index.html'
             }
 
             timeLeft -= 1000
@@ -197,14 +201,14 @@
 
         function loadInputs() {
 
-            for (let i = 0; i < 27; i++) {
+            for (let i = 2; i < 27; i++) {
                 let p = document.createElement('div');
                 p.classList = "dottedBox p-2 m-1"
+                p.style = "cursor:pointer"
 
                 p.textContent = `${i + 1}`
                 parent.appendChild(p);
             }
-
         }
 
         loadInputs()

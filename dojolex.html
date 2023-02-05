@@ -80,10 +80,10 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="/dojolex.html">refresh</a>
+                        <a class="nav-link active" aria-current="page" href="/dojolex.html">SAT</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="/dojolex.html">disable</a>
+                        <a class="nav-link active" aria-current="page" href="/review.html">review</a>
                     </li>
 
 
@@ -102,11 +102,9 @@
                     <i class="bi bi-window-fullscreen"></i> F11
                 </span> -->
                 <span class=" border border-dark rounded px-1 mb-1 text-center" onclick="timerFunction()"
-                    style="cursor: pointer;">
-                    <i class="bi bi-clock-history timerOn" id="timer"></i> Timer
+                    style="cursor: pointer;"><i class="bi bi-clock-history timerOn" id="timer"></i> Timer
                 </span>
-                <div id="openbtn" onclick="openNav()" class=" float-end" style="cursor: pointer;">
-
+                <div id="openbtn" onclick="openNav()" class=" float-end ms-1" style="cursor: pointer;">
                     <i class="bi bi-three-dots-vertical border border-dark rounded text-dark"></i>
                 </div>
 
@@ -179,12 +177,11 @@
         </div>
 
         <div class="text-end me-lg-3 my-4 ">
-            <button type="button" class="btn btn-outline-danger" onclick="window.location.href='/review.html';"> <i
-                    class="bi bi-robot"></i></button>
-            <button type="button" class="btn btn-outline-success  " id="read">
+
+            <button type="button" class="btn btn-outline-success rounded-pill " id="read">
                 <i class="bi bi-soundwave"></i></button>
 
-            <button type="button" class="btn btn-outline-primary  " id="next">Next <i
+            <button type="button" class="btn btn-outline-primary  rounded-pill" id="next">Next <i
                     class="bi bi-arrow-right-circle"></i></button>
 
             <br>
@@ -204,7 +201,7 @@
                 CLOSE X</p>
         </div>
 
-        <div class="border container">
+        <div class="border rounded container py-2">
             <div class="d-flex justify-content-center my-2">
                 <div class="ms-3"> Current <i class="bi bi-geo-alt-fill text-dark"></i></div>
                 <div class="ms-3"> Unanswered <i class="bi bi-bounding-box-circles"></i></div>
@@ -214,10 +211,13 @@
 
             <div id="questionNoBox" class="d-flex justify-content-start flex-wrap">
                 <div class="border border-danger p-2 m-1"><i class="bi bi-geo-alt-fill text-dark"></i> 1 </div>
-                <div class="border border-primary p-2 m-1"><i class="bi bi-bookmark-fill text-danger"></i> 2 </div>
+                <div class="bg-primary p-2 m-1 text-light"><i class="bi bi-bookmark-fill text-danger"></i> 2 </div>
             </div>
         </div>
-
+        <div class="py-3 pe-2 pe-sm-5">
+            <button type="button" class="btn btn-sm btn-outline-primary rounded-pill float-end"
+                onclick="window.location.href='/review.html' ;">Review Page</button>
+        </div>
 
     </div>
 
@@ -441,7 +441,7 @@
             if (distance < 0) {
                 clearInterval(x);
                 document.getElementById("demo").innerHTML = "TIME UP";
-                window.location.href = '/index.html'
+                // window.location.href = '/index.html'
             }
 
             timeLeft -= 1000
