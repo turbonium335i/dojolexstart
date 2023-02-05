@@ -46,6 +46,13 @@
 
         }
 
+        .dottedBox {
+
+            border-style: dotted;
+            border-color: silver;
+            border-width: 2px;
+        }
+
         .navbar2 {
             overflow: hidden;
             background-color: white;
@@ -198,11 +205,16 @@
         </div>
 
         <div class="border container">
-
+            <div class="d-flex justify-content-center my-2">
+                <div class="ms-3"> Current <i class="bi bi-geo-alt-fill text-dark"></i></div>
+                <div class="ms-3"> Unanswered <i class="bi bi-bounding-box-circles"></i></div>
+                <div class="ms-3"> Marked <i class="i bi-bookmark-fill text-danger"></i></div>
+            </div>
+            <hr>
 
             <div id="questionNoBox" class="d-flex justify-content-start flex-wrap">
-                <div class="border border-danger p-2 m-1">1</div>
-
+                <div class="border border-danger p-2 m-1"><i class="bi bi-geo-alt-fill text-dark"></i> 1 </div>
+                <div class="border border-primary p-2 m-1"><i class="bi bi-bookmark-fill text-danger"></i> 2 </div>
             </div>
         </div>
 
@@ -625,7 +637,7 @@
         }
 
         function openNav() {
-            document.getElementById("mySidebar").style.height = "45vh";
+            document.getElementById("mySidebar").style.height = "40vh";
             open = true
 
         }
@@ -639,9 +651,10 @@
 
         function loadInputs() {
 
-            for (let i = 0; i < 27; i++) {
+            for (let i = 2; i < 27; i++) {
                 let p = document.createElement('div');
-                p.classList = "border border-primary p-2 m-1 "
+                p.classList = "dottedBox p-2 m-1"
+                p.style = "cursor:pointer"
 
                 p.textContent = `${i + 1}`
                 parent.appendChild(p);
