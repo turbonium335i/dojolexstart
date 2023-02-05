@@ -22,6 +22,10 @@
             color: black;
         }
 
+        .highlighter {
+            background: yellow;
+        }
+
         .crossout {
 
             text-decoration: line-through;
@@ -93,6 +97,8 @@
                         Along the highway <u>is</u> a dog and a cat.
 
                     </div>
+                    <button class="btn py-2 btn-outline-warning text-dark" id="clear" onclick="clean()">clear
+                        highlights</button>
                 </div>
                 <div class="col-12 col-md-6">
                     <div class="d-flex justify-content-between mt-4 mb-2 ms-lg-5  fw-bold  "
@@ -164,7 +170,7 @@
 
         var apiJson = [
 
-            { "id": 1, "question": "I bought a new Patek Philippe Nautilus as a gift for myself I could afford it because I just received my well-earned bonus.", "choice1": "NO CHANGE", "choice2": "myself, I could", "choice3": "myself, so", "choice4": "myself; I could", "correct": "myself; I could", "difficulty": 1, "tag": "Sentence Structure", "solution": "The original sentence is a run on.  (D) \"myself; I could\" is the best answer because it appropriately uses a semicolon to punctuate the break between two independent clauses." }, { "id": 2, "question": "Since Aatorx is too ear-piercingly loud; Seraphine cannot fall asleep", "choice1": "NO CHANGE", "choice2": "loud; therefore Seraphine", "choice3": "loud, Seraphine", "choice4": "loud Seraphine", "correct": "loud, Seraphine", "difficulty": 2, "tag": "Sentence Structure", "solution": "The original sentence incorrectly uses a semicolon to punctuate the break between a dependent clause and an independent clause.  (C) \"loud, Seraphine\" is the best answer because it appropriately uses a comma to punctuate the break between a dependent clause and an independent clause." }, { "id": 3, "question": "Marcus Kim, whose polymer sculptures often portray sub tropical scenes such as snorkeling or sailing, drawing his inspiration from Palawan stone carvings he saw while vacationing on Coron Island.", "choice1": "NO CHANGE", "choice2": "drew", "choice3": "taking", "choice4": "having drew", "correct": "drew", "difficulty": 1, "tag": "Sentence Structure", "solution": "The original sentence is a fragment.  (B) \"drew\" is the best answer because it turns the fragment into a sentence." }, { "id": 4, "question": "Won Bin pretended to be interested in his girlfriend’s hobby he secretly wished he had stayed home.", "choice1": "NO CHANGE", "choice2": "hobby; and he", "choice3": "hobby; he", "choice4": "hobby; so he", "correct": "hobby; he", "difficulty": 2, "tag": "Sentence Structure", "solution": "The original sentence is a run on.  (C) \"hobby; he\" is the best answer because it appropriately uses a semi colon to punctuate the break between two independent clauses." }, { "id": 5, "question": "Feeling that the board of directors had too hastily settled several crucial issues: Chairman Wei Bo asked that further deliberation be given to his subordinate’s unconventional proposal.", "choice1": "NO CHANGE", "choice2": "issues, Chairman", "choice3": "issues Chairman", "choice4": "issues; Chairman", "correct": "issues, Chairman", "difficulty": 1, "tag": "Sentence Structure", "solution": "The original sentence incorrectly uses a colon at the end of dependent clause.  (B) \"issues, Chairman\" is the best answer because it appropriately uses a comma to punctuate the break between the dependent clause (Feeling that… issues) and the independent clause (Chairman Wei Bo … proposal.)" }]
+            { "id": 1, "question": "I bought a new Patek Philippe Nautilus as a gift for myself I could afford it because I just received my well-earned bonus.", "choice1": "NO CHANGE", "choice2": "myself, I could", "choice3": "myself, so", "choice4": "myself; I could", "correct": "myself; I could", "difficulty": 1, "tag": "Sentence Structure", "solution": "The original sentence is a run on.  (D) \"myself; I could\" is the best answer because it appropriately uses a semicolon to punctuate the break between two independent clauses." }, { "id": 2, "question": "Since Aatorx is too ear-piercingly loud; Seraphine cannot fall asleep", "choice1": "NO CHANGE", "choice2": "loud; therefore Seraphine", "choice3": "loud, Seraphine", "choice4": "loud Seraphine", "correct": "loud, Seraphine", "difficulty": 2, "tag": "Sentence Structure", "solution": "The original sentence incorrectly uses a semicolon to punctuate the break between a dependent clause and an independent clause.  (C) \"loud, Seraphine\" is the best answer because it appropriately uses a comma to punctuate the break between a dependent clause and an independent clause." }, { "id": 3, "question": "Marcus Kim, whose polymer sculptures often portray sub tropical scenes such as snorkeling or sailing, drawing his inspiration from Palawan stone carvings he saw while vacationing on Coron Island.", "choice1": "NO CHANGE", "choice2": "drew", "choice3": "taking", "choice4": "having drew", "correct": "drew", "difficulty": 1, "tag": "Sentence Structure", "solution": "The original sentence is a fragment.  (B) \"drew\" is the best answer because it turns the fragment into a sentence." }, { "id": 4, "question": "Won Bin pretended to be interested in his girlfriend’s hobby he secretly wished he had stayed home.", "choice1": "NO CHANGE", "choice2": "hobby; and he", "choice3": "hobby; he", "choice4": "hobby; so he", "correct": "hobby; he", "difficulty": 2, "tag": "Sentence Structure", "solution": "The original sentence is a run on.  (C) \"hobby; he\" is the best answer because it appropriately uses a semi colon to punctuate the break between two independent clauses." }, { "id": 5, "question": "Feeling that the board of directors had too hastily settled several crucial issues: Chairman Wei Bo asked that further deliberation be given to his subordinate’s unconventional proposal.", "choice1": "NO CHANGE", "choice2": "issues, Chairman", "choice3": "issues Chairman", "choice4": "issues; Chairman", "correct": "issues, Chairman", "difficulty": 1, "tag": "Sentence Structure", "solution": "The original sentence incorrectly uses a colon at the end of dependent clause.  (B) \"issues, Chairman\" is the best answer because it appropriately uses a comma to punctuate the break between the dependent clause (Feeling that… issues) and the independent clause (Chairman Wei Bo … proposal.)" }, { "id": 28, "question": "In his actions you can see that Chong not only understood the challenge and also the hidden lesson of his master.", "choice1": "NO CHANGE", "choice2": "but", "choice3": "as", "choice4": "for", "correct": "but", "difficulty": 2, "tag": "Transition", "solution": "The underlined portion of the sentence creates a transition error.  Choice B is the best answer because it properly introduces a correlative conjunction (not only understood the challenge but also the hidden lesson of his master.).  “not only . . . but also . . .” is the logical and coherent choice to communicate the correlative conjunction in this sentence. \r\n  \r\nChoices A, C, and D are incorrect because none of the transitions they offer logically fits the content that precedes or follows the proposed choice." }, { "id": 29, "question": "Unlike other members of the bear family, which rely at least in part on a diet of leaves, fruits, roots, or other vegetation, but polar bears are primarily carnivorous, and eat mainly meat.", "choice1": "NO CHANGE", "choice2": "but polar bear is", "choice3": "polar bears, which are", "choice4": "polar bears are", "correct": "polar bears are", "difficulty": 2, "tag": "Transition", "solution": "The underlined portion of the sentence creates a transition error and creates two dependent clauses.  Choice C is the best answer because it properly removes the “but” to create an independent clause." }, { "id": 30, "question": "Robert Jordan’s book is not only an intriguing tale of love and betrayal and also evidence of the complexity of cross-cultural romances.", "choice1": "NO CHANGE", "choice2": "as well as", "choice3": "but also", "choice4": "in addition", "correct": "but also", "difficulty": 3, "tag": "Transition", "solution": "The underlined portion of the sentence creates a transition error.  Choice C is the best answer because it properly introduces an addition (not only an intriguing tale of love and betrayal but also evidence of the complexity of cross-cultural romances).  “not only . . . but also . . .” is the logical and coherent choice to communicate the addition in this sentence.\r\nChoices A, B, and D are incorrect because none of the transitions they offer logically fits the content that precedes or follows the proposed choice." }]
 
 
 
@@ -486,6 +492,63 @@
 
 
 
+    </script>
+    <script>
+
+        var flag = 0,
+            element = document;
+        element.addEventListener("touchstart", function () {
+            flag = 0;
+        }, false);
+        element.addEventListener("touchmove", function () {
+            flag = 1;
+        }, false);
+        element.addEventListener("touchend", function () {
+            if (flag === 1) {
+                getSelText();
+            }
+        }, false);
+
+
+        var flag = 0,
+            element = document;
+        element.addEventListener("mousedown", function () {
+            flag = 0;
+        }, false);
+        element.addEventListener("mousemove", function () {
+            flag = 1;
+        }, false);
+        element.addEventListener("mouseup", function () {
+            if (flag === 1) {
+                getSelText();
+            }
+        }, false);
+
+        // document.addEventListener("selectionchange", function (e) {
+        //     //do something, e.g. document.getSelection()        
+        //     alert(e)
+        // });
+
+        function getSelText() {
+            var sel = window.getSelection ? window.getSelection() : document.selection.createRange(); // FF : IE
+            if (sel.getRangeAt) { // thats for FF
+                var range = sel.getRangeAt(0);
+                var newNode = document.createElement("span");
+                newNode.setAttribute('class', 'highlighter');
+                range.surroundContents(newNode);
+            } else { //and thats for IE7
+                sel.pasteHTML('<span class="highlighter">' + sel.htmlText + '</span>');
+
+            }
+        }
+
+
+        function clean() {
+            var text = document.getElementById("question")
+            text.innerHTML = cQuestion
+
+            // text.style.backgroundColor = "green";
+        }
     </script>
 
 </body>
