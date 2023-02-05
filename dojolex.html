@@ -548,12 +548,13 @@
 
 
         function clean() {
-            // var text = document.getElementById("question")
-            // text.innerHTML = cQuestion
+
             const elements = document.querySelectorAll('*');
             elements.forEach((element) => {
                 element.classList.remove('highlighter');
             });
+            var text = document.getElementById("question")
+            text.innerHTML = cQuestion
 
 
             // text.style.backgroundColor = "green";
