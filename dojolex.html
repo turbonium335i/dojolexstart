@@ -21,6 +21,13 @@
         .choice {
             color: black;
         }
+
+        .crossout {
+
+            text-decoration: line-through;
+            cursor: pointer;
+            color: #A9A9A9
+        }
     </style>
 </head>
 
@@ -88,7 +95,7 @@
                     </div>
                 </div>
                 <div class="col-12 col-md-6">
-                    <div class="d-flex justify-content-between mt-4 mb-2 mx-lg-5  fw-bold  "
+                    <div class="d-flex justify-content-between mt-4 mb-2 ms-lg-5  fw-bold  "
                         style="background-color:#D3D3D3; border-bottom: dotted gray;">
                         <div class="bg-dark text-light px-1" span id="qCount"> </div>
                         <div class="pe-1"><i class="bi bi-bookmark"></i> </div>
@@ -97,18 +104,33 @@
                     <div class="mb-2 mx-lg-5 py-2 ps-1 fw-bold">
                         Which correctly completes the sentence?</div>
 
-                    <div class=" border  rounded mb-2 mx-lg-5 py-2 ps-2" id="a" style="cursor:pointer;">
-                        A. This
-                        is a
-                        NO CHANGE.</div>
-                    <div class=" border  rounded mb-2 mx-lg-5 py-2 ps-2" id="b" style="cursor:pointer;">
-                        B. is
+                    <div class="d-flex ">
+                        <div class="flex-grow-1 border rounded mb-2 ms-lg-5 py-2 ps-2  " id="a" style="cursor:pointer;">
+                            A. Thisis a NO CHANGE.</div>
+
+                        <div class="   mb-2 crossout text-secondary  d-flex align-items-center"><span
+                                class="fw-bold choice text-secondary   px-1    ms-1" onclick="cross(a)">A</span></div>
                     </div>
-                    <div class=" border  rounded mb-2 mx-lg-5 py-2 ps-2" id="c" style="cursor:pointer;">
-                        C. are
+                    <div class="d-flex ">
+                        <div class="flex-grow-1 border rounded mb-2 ms-lg-5 py-2 ps-2  " id="b" style="cursor:pointer;">
+                            A. Thisis a NO CHANGE.</div>
+
+                        <div class="   mb-2 crossout text-secondary  d-flex align-items-center"><span
+                                class="fw-bold choice text-secondary   px-1    ms-1" onclick="cross(b)">B</span></div>
                     </div>
-                    <div class=" border  rounded mb-2 mx-lg-5 py-2 ps-2" id="d" style="cursor:pointer;">
-                        D. was
+                    <div class="d-flex ">
+                        <div class="flex-grow-1 border rounded mb-2 ms-lg-5 py-2 ps-2  " id="c" style="cursor:pointer;">
+                            A. Thisis a NO CHANGE.</div>
+
+                        <div class="   mb-2 crossout text-secondary  d-flex align-items-center"><span
+                                class="fw-bold choice text-secondary   px-1    ms-1" onclick="cross(c)">C</span></div>
+                    </div>
+                    <div class="d-flex ">
+                        <div class="flex-grow-1 border rounded mb-2 ms-lg-5 py-2 ps-2  " id="d" style="cursor:pointer;">
+                            A. Thisis a NO CHANGE.</div>
+
+                        <div class="   mb-2 crossout text-secondary  d-flex align-items-center"><span
+                                class="fw-bold choice text-secondary   px-1    ms-1" onclick="cross(d)">D</span></div>
                     </div>
                 </div>
 
@@ -182,6 +204,13 @@
             checkAnswer(d);
         });
 
+        function cross(x) {
+
+
+            x.classList.toggle("crossout");
+
+        }
+
 
 
 
@@ -232,6 +261,13 @@
         var cQuestion = ""
 
         function loadQuestion(q) {
+
+            a.classList.remove('crossout')
+            b.classList.remove('crossout')
+            c.classList.remove('crossout')
+            d.classList.remove('crossout')
+
+
             var randomItem = apiJson[Math.floor(Math.random() * apiJson.length)];
 
             currentQuestion = randomItem
