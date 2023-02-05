@@ -107,7 +107,7 @@
                         <div class="pe-1"><i class="bi bi-bookmark"></i> </div>
                     </div>
 
-                    <div class="mb-2 mx-lg-5 py-2 ps-1 fw-bold">
+                    <div class="mb-2 mx-lg-5 py-2 ps-1 fw-bold" id="qprompt">
                         Which correctly completes the sentence?</div>
 
                     <div class="d-flex ">
@@ -277,6 +277,10 @@
             b.classList.remove('crossout')
             c.classList.remove('crossout')
             d.classList.remove('crossout')
+
+            // clear highlighting
+            var qprompt = document.getElementById("qprompt")
+            qprompt.innerHTML = "Which correctly completes the sentence?"
 
 
             var randomItem = apiJson[Math.floor(Math.random() * apiJson.length)];
@@ -544,8 +548,13 @@
 
 
         function clean() {
-            var text = document.getElementById("question")
-            text.innerHTML = cQuestion
+            // var text = document.getElementById("question")
+            // text.innerHTML = cQuestion
+            const elements = document.querySelectorAll('*');
+            elements.forEach((element) => {
+                element.classList.remove('highlighter');
+            });
+
 
             // text.style.backgroundColor = "green";
         }
