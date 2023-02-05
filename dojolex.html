@@ -32,6 +32,16 @@
             cursor: pointer;
             color: #A9A9A9
         }
+
+
+        @media(min-width:768px) {
+            #endborder {
+                border-right-style: inset;
+                border-color: silver;
+                border-width: 1px;
+            }
+
+        }
     </style>
 </head>
 
@@ -90,15 +100,15 @@
 
             <br>
             <div class="row">
-                <div class="col-12 col-md-6 border-end">
+                <div class="col-12 col-md-6" id="endborder">
 
                     <div class="mb-5 py-4 fw-bold" id="question">
 
                         Along the highway <u>is</u> a dog and a cat.
 
                     </div>
-                    <button class="btn py-2 btn-outline-warning text-dark" id="clear" onclick="clean()">clear
-                        highlights</button>
+                    <button class="btn py-2 btn-outline-warning text-dark" id="clear" onclick="clean()"><i
+                            class="bi bi-eraser"></i> Highlights</button>
                 </div>
                 <div class="col-12 col-md-6">
                     <div class="d-flex justify-content-between mt-4 mb-2 ms-lg-5  fw-bold  "
