@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>dojolex.com</title>
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <!-- Bootstrap icons-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet"
+        type="text/css" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="css/styles.css" rel="stylesheet" />
+    <style>
+        .choice {
+            color: black;
+        }
+
+        .highlighter {
+            background: yellow;
+        }
+
+        .progresscolor {
+            background: orange;
+        }
+
+        .crossout {
+
+            text-decoration: line-through;
+            cursor: pointer;
+            color: #A9A9A9
+        }
+
+
+        @media (min-width:768px) {
+            #endborder {
+                border-right-style: inset;
+                border-color: silver;
+                border-width: 1px;
+            }
+
+        }
+
+        .dottedBox {
+
+            border-style: dotted;
+            border-color: silver;
+            border-width: 2px;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+        <div class="container-fluid">
+
+            <a class="navbar-brand" href="/index.html"><img
+                    src="https://i.postimg.cc/TwPQwwDF/204-2049751-network-icon-red-network-icon-png.png"
+                    style="max-width:30px;width:100%"> &nbsp;dojolex.com</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/dojolex.html">refresh</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/dojolex.html">disable</a>
+                    </li>
+
+
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+
+    <div class="container my-3">
+        <div class="d-flex justify-content-between pb-1">
+
+            <span class="fw-bold h5"> Section 1: Verbal Module 1</span>
+            <div>
+                <!-- <span class="border border-dark rounded px-1 mb-1 me-1" onclick="fullscreen()" style="cursor: pointer;">
+                <i class="bi bi-window-fullscreen"></i> F11
+            </span> -->
+                <span class=" border border-dark rounded px-1 mb-1 text-center" onclick="timerFunction()"
+                    style="cursor: pointer;">
+                    <i class="bi bi-clock-history timerOn" id="timer"></i> Timer
+                </span>
+
+            </div>
+
+        </div>
+        <div id="demo" class="text-center fw-bold">00:00:00</div>
+        <div class="text-center my-3">
+            <h1 class="my-3">Check Your Work</h1>
+
+            <div class="border container">
+                <h5 class="my-3 text-secondary">Section 1: Reading and Writing Questions</h5>
+                <hr>
+                <div id="questionNoBox" class="d-flex justify-content-start flex-wrap">
+                    <div class="border border-danger p-2 m-1">1</div>
+
+                </div>
+            </div>
+            <div class="text-end me-lg-3 my-4 ">
+                <button type="button" class="btn btn-outline-danger" onclick="window.location.href='/dojolex.html';"> <i
+                        class="bi bi-robot"></i></button>
+                <button type="button" class="btn btn-outline-success  " id="read">
+                    <i class="bi bi-soundwave"></i></button>
+
+                <button type="button" class="btn btn-outline-primary  " id="next">Next <i
+                        class="bi bi-arrow-right-circle"></i></button>
+
+                <br>
+            </div>
+        </div>
+
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+    <script>
+        var timeLeft = 300000
+
+        var countDownDate = (Date.now() + timeLeft)
+        var x = setInterval(function () {
+            var now = new Date().getTime();
+            var distance = countDownDate - now;
+            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            if (hours < 10) {
+                hours = "0" + hours
+            }
+            if (minutes < 10) {
+                minutes = "0" + minutes
+            }
+            if (seconds < 10) {
+                seconds = "0" + seconds
+            }
+
+            document.getElementById("demo").innerHTML = hours + ":"
+                + minutes + ":" + seconds + "";
+
+            if (distance < 295000) {
+                document.getElementById("demo").classList.add("text-danger")
+            }
+
+            if (distance < 0) {
+                clearInterval(x);
+                document.getElementById("demo").innerHTML = "TIME UP";
+                window.location.href = '/index.html'
+            }
+
+            timeLeft -= 1000
+
+        }, 1000);
+
+        function timerFunction() {
+
+            var timer = document.getElementById("timer");
+            var demo = document.getElementById("demo");
+
+            if (timer.classList.contains('timerOn')) {
+
+                demo.style.display = "none";
+                timer.classList.remove("timerOn");
+
+
+            } else {
+                demo.style.display = "block";
+                timer.classList.add("timerOn");
+
+            }
+
+
+
+        }
+
+    </script>
+
+    <script>
+        let parent = document.querySelector('#questionNoBox');
+
+        function loadInputs() {
+
+            for (let i = 0; i < 27; i++) {
+                let p = document.createElement('div');
+                p.classList = "dottedBox p-2 m-1"
+
+                p.textContent = `${i + 1}`
+                parent.appendChild(p);
+            }
+
+        }
+
+        loadInputs()
+    </script>
+
+</body>
+
+</html>
