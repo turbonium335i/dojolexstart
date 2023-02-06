@@ -105,6 +105,10 @@
                 <div id="openbtn" onclick="openNav()" class="float-end ms-1" style="cursor: pointer">
                     <i class="bi bi-three-dots-vertical border border-dark rounded text-dark"></i>
                 </div>
+                <div id="openbtn" onclick="showcalc()" class="float-end ms-1" style="cursor: pointer">
+                    <i class="bi bi-calculator-fill border border-dark rounded text-dark"></i>
+                </div>
+
             </div>
         </div>
         <div id="demo" class="text-center fw-bold">00:00:00</div>
@@ -191,7 +195,11 @@
 
         <div class="container d-none" id="solution"></div>
 
-        <div class="container px-lg-5"></div>
+
+        <div class="d-flex justify-content-around my-5">
+            <div id="calculatorx" style="width: 750px; height: 500px;" class="d-none"> </div>
+        </div>
+
     </div>
     <div class="navbar2" id="mySidebar">
         <div class="bg-secondary py-2 text-light mb-3">
@@ -388,6 +396,11 @@
         function cross(x) {
             x.classList.toggle("crossout");
         }
+
+        function showcalc() {
+            document.getElementById("calculatorx").classList.toggle("d-none");
+        }
+
         var btag = document.getElementById("bookmark");
         function bookmarktag() {
             var btag = document.getElementById("bookmark");
@@ -832,6 +845,15 @@
             gtq.classList.remove("d-none");
             closeNav();
         }
+    </script>
+
+    <script src="https://www.desmos.com/api/v1.7/calculator.js?apiKey=dcb31709b452b1cf9dc26972add0fda6"></script>
+    <script>
+        var elt = document.getElementById('calculatorx');
+        var calculator = Desmos.GraphingCalculator(elt);
+        calculator.setExpression({ id: 'graph1', latex: 'y=x^2' });
+
+
     </script>
 </body>
 
