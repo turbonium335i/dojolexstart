@@ -646,6 +646,9 @@
 
     </script>
 
+    <!-- <div class="border border-danger p-2 m-1"><i class="bi bi-geo-alt-fill text-dark"></i> 1 </div>
+<div class="bg-primary p-2 m-1 text-light"><i class="bi bi-bookmark-fill text-danger"></i> 2 </div> -->
+
     <script>
         let parent = document.querySelector('#questionNoBox');
 
@@ -655,14 +658,32 @@
                 let p = document.createElement('div');
                 p.classList = "dottedBox p-2 m-1"
                 p.style = "cursor:pointer"
-
+                p.setAttribute("id", `a${i}`);
+                p.setAttribute("onclick", `gotoquestion(${i})`);
                 p.textContent = `${i + 1}`
+
+                let pointer = document.createElement('i');
+                // pointer.textContent = i
+                pointer.classList = "bi bi-geo-alt-fill text-dark d-none"
+                pointer.setAttribute("id", `pointer${i}`);
+                pointer.setAttribute("data-icon", i);
+                p.appendChild(pointer);
+
+
+
                 parent.appendChild(p);
             }
-
         }
 
         loadInputs()
+
+        function gotoquestion(i) {
+            console.log(i)
+            var gtq = document.getElementById(`pointer${i}`);
+            gtq.classList.remove('d-none')
+            closeNav()
+
+        }
     </script>
 
 </body>
