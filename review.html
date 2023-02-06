@@ -70,12 +70,17 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="/dojolex.html">SAT</a>
+                        <a class="nav-link active" aria-current="page" href="/index.html">SAT</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="/review.html">review</a>
                     </li>
-
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/results.html">results</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/analysis.html">analysis</a>
+                    </li>
 
                 </ul>
 
@@ -101,27 +106,28 @@
         </div>
         <div id="demo" class="text-center fw-bold">00:00:00</div>
         <div class="text-center my-3">
-            <h1 class="my-3">Check Your Work</h1>
+            <h1 class="my-4">Check Your Work</h1>
 
-            <div class="border container">
+            <div class="border container py-2">
                 <div class="d-flex justify-content-center my-2">
                     <div class="ms-3"> Current <i class="bi bi-geo-alt-fill text-dark"></i></div>
                     <div class="ms-3"> Unanswered <i class="bi bi-bounding-box-circles"></i></div>
                     <div class="ms-3"> Marked <i class="i bi-bookmark-fill text-danger"></i></div>
                 </div>
                 <hr>
-                <div id="questionNoBox" class="d-flex justify-content-start flex-wrap">
-                    <div class="border border-danger p-2 m-1"><i class="bi bi-geo-alt-fill text-dark"></i> 1 </div>
-                    <div class="bg-primary p-2 m-1 text-light"><i class="bi bi-bookmark-fill text-danger"></i> 2 </div>
+                <div id="questionNoBox" class="d-flex justify-content-center flex-wrap">
+                    <div class="border border-danger p-1 m-1"><i class="bi bi-geo-alt-fill text-dark"></i> 1 </div>
+                    <div class="bg-primary p-1 m-1 text-light"><i class="bi bi-bookmark-fill text-danger"></i> 2 </div>
                 </div>
             </div>
             <div class="text-end me-lg-3 my-4 ">
                 <button type="button" class="btn btn-outline-danger" onclick="window.location.href='/dojolex.html';"> <i
                         class="bi bi-robot"></i></button>
-                <button type="button" class="btn btn-outline-success  " id="read">
+                <button type="button" class="btn btn-outline-success" id="read">
                     <i class="bi bi-soundwave"></i></button>
 
-                <button type="button" class="btn btn-outline-primary  " id="next">Next <i
+                <button type="button" class="btn btn-outline-primary" id="next"
+                    onclick="window.location.href='/results.html' ;">Next <i
                         class="bi bi-arrow-right-circle"></i></button>
 
                 <br>
@@ -203,7 +209,7 @@
 
             for (let i = 2; i < 27; i++) {
                 let p = document.createElement('div');
-                p.classList = "dottedBox p-2 m-1"
+                p.classList = "dottedBox p-1 m-1"
                 p.style = "cursor:pointer"
 
                 p.textContent = `${i + 1}`
