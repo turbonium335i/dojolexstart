@@ -210,8 +210,8 @@
             <hr>
 
             <div id="questionNoBox" class="d-flex justify-content-start flex-wrap">
-                <div class="border border-danger p-2 m-1"><i class="bi bi-geo-alt-fill text-dark"></i> 1 </div>
-                <div class="bg-primary p-2 m-1 text-light"><i class="bi bi-bookmark-fill text-danger"></i> 2 </div>
+                <div class="border border-danger p-1 m-1"><i class="bi bi-geo-alt-fill text-dark"></i> 1 </div>
+                <div class="bg-primary p-1 m-1 text-light"><i class="bi bi-bookmark-fill text-danger"></i> 2 </div>
             </div>
         </div>
         <div class="py-3 pe-2 pe-sm-5">
@@ -656,7 +656,7 @@
 
             for (let i = 2; i < 27; i++) {
                 let p = document.createElement('div');
-                p.classList = "dottedBox p-2 m-1"
+                p.classList = "dottedBox p-1 m-1"
                 p.style = "cursor:pointer"
                 p.setAttribute("id", `a${i}`);
                 p.setAttribute("onclick", `gotoquestion(${i})`);
