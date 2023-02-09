@@ -460,10 +460,11 @@
         var choiceD = "D";
         var correctChoice = "X";
 
-        var q = 0;
+
         var apiLen = apiJson.length;
         var qbox = document.getElementById("question");
         var cQuestion = "";
+        var q = 1
 
         function loadQuestion(q) {
             a.classList.remove("crossout");
@@ -476,7 +477,15 @@
             var qprompt = document.getElementById("qprompt");
             qprompt.innerHTML = "Which correctly completes the sentence?";
 
-            var randomItem = apiJson[Math.floor(Math.random() * apiJson.length)];
+            // var randomItem = apiJson[Math.floor(Math.random() * apiJson.length)];
+
+            var randomItem = Object.values(apiJson).find(item => item.id === q);
+
+            if (q !== 1) {
+
+                gotoquestion(q)
+            }
+
 
             currentQuestion = randomItem;
             choiceA = randomItem.choice1;
@@ -833,21 +842,19 @@
 
         function loadInputs() {
 
-
-
-            for (let i = 2; i < 27; i++) {
+            for (let i = 0; i < apiLen; i++) {
                 let p = document.createElement("div");
                 p.classList = "dottedBox p-1 m-1";
                 p.style = "cursor:pointer";
-                p.setAttribute("id", `a${i}`);
-                p.setAttribute("onclick", `gotoquestion(${i})`);
-                p.textContent = `${i + 1}`;
+                p.setAttribute("id", `a${apiJson[i].id}`);
+                p.setAttribute("onclick", `loadQuestion(${apiJson[i].id})`);
+                p.textContent = `${apiJson[i].id}`;
 
                 let pointer = document.createElement("i");
                 // pointer.textContent = i
                 pointer.classList = "bi bi-geo-alt-fill text-dark d-none";
-                pointer.setAttribute("id", `pointer${i}`);
-                pointer.setAttribute("data-icon", i);
+                pointer.setAttribute("id", `pointer${apiJson[i].id}`);
+                pointer.setAttribute("data-icon", apiJson[i].id);
                 p.appendChild(pointer);
 
                 parent.appendChild(p);
@@ -858,6 +865,16 @@
 
         function gotoquestion(i) {
             console.log(i);
+
+            const elements = document.querySelectorAll(".bi-geo-alt-fill");
+            console.log(elements)
+            elements.forEach((element) => {
+                element.classList.add("d-none");
+            });
+
+            var text = document.getElementById("question");
+            text.innerHTML = cQuestion;
+
             var gtq = document.getElementById(`pointer${i}`);
             gtq.classList.remove("d-none");
             closeNav();
