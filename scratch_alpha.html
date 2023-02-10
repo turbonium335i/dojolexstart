@@ -363,14 +363,6 @@
             },
         ];
 
-        var apiLen = apiJson.length;
-        var fixedList = []
-
-        for (let i = 0; i < apiLen; i++) {
-            fixedList.push(i)
-        }
-
-
         var doneList = {}
 
         var s = document.getElementById("solution");
@@ -473,10 +465,10 @@
         var correctChoice = "X";
 
 
-
+        var apiLen = apiJson.length;
         var qbox = document.getElementById("question");
         var cQuestion = "";
-        var q = 0
+        var q = 1
 
         function loadQuestion(q) {
             a.classList.remove("crossout");
@@ -492,74 +484,73 @@
 
             // var randomItem = apiJson[Math.floor(Math.random() * apiJson.length)];
 
-            // var randomItem = Object.values(apiJson).find(item => item.id === q);
+            var randomItem = Object.values(apiJson).find(item => item.id === q);
 
-            var questionItem = apiJson[q]
+            if (q !== 1) {
 
+                gotoquestion(q)
+            }
+            var cn = (q.toString())
+            console.log(doneList)
+            if (cn in doneList) {
+                console.log(doneList[cn])
+            }
 
-            gotoquestion(q)
+            currentQuestion = randomItem;
+            choiceA = randomItem.choice1;
+            choiceB = randomItem.choice2;
+            choiceC = randomItem.choice3;
+            choiceD = randomItem.choice4;
 
-            // var cn = (q.toString())
-            // console.log(doneList)
-            // if (cn in doneList) {
-            //     console.log(doneList[cn])
-            // }
-
-            currentQuestion = questionItem;
-            choiceA = questionItem.choice1;
-            choiceB = questionItem.choice2;
-            choiceC = questionItem.choice3;
-            choiceD = questionItem.choice4;
-
-            qbox.innerHTML = questionItem.question;
-            cQuestion = questionItem.question;
+            qbox.innerHTML = randomItem.question;
+            cQuestion = randomItem.question;
 
             document.getElementById("a").innerHTML =
                 '<span class="fw-bold choice border border-dark px-1 rounded-circle" >A</span>&nbsp;&nbsp;' +
-                questionItem.choice1;
+                randomItem.choice1;
             document.getElementById("a").classList.add("border-dark");
             document.getElementById("b").innerHTML =
                 '<span class="fw-bold choice border border-dark px-1 rounded-circle" >B</span>&nbsp;&nbsp;' +
-                questionItem.choice2;
+                randomItem.choice2;
             document.getElementById("b").classList.add("border-dark");
             document.getElementById("c").innerHTML =
                 '<span class="fw-bold choice border border-dark px-1 rounded-circle" >C</span>&nbsp;&nbsp;' +
-                questionItem.choice3;
+                randomItem.choice3;
             document.getElementById("c").classList.add("border-dark");
             document.getElementById("d").innerHTML =
                 '<span class="fw-bold choice border border-dark px-1 rounded-circle" >D</span>&nbsp;&nbsp;' +
-                questionItem.choice4;
+                randomItem.choice4;
             document.getElementById("d").classList.add("border-dark");
 
-            a.dataset.id = questionItem.choice1;
-            b.dataset.id = questionItem.choice2;
-            c.dataset.id = questionItem.choice3;
-            d.dataset.id = questionItem.choice4;
+            a.dataset.id = randomItem.choice1;
+            b.dataset.id = randomItem.choice2;
+            c.dataset.id = randomItem.choice3;
+            d.dataset.id = randomItem.choice4;
 
-            if (questionItem.choice1 === questionItem.correct) {
+            if (randomItem.choice1 === randomItem.correct) {
                 correctChoice = "a";
-            } else if (questionItem.choice2 === questionItem.correct) {
+            } else if (randomItem.choice2 === randomItem.correct) {
                 correctChoice = "b";
-            } else if (questionItem.choice3 === questionItem.correct) {
+            } else if (randomItem.choice3 === randomItem.correct) {
                 correctChoice = "c";
-            } else if (questionItem.choice4 === questionItem.correct) {
+            } else if (randomItem.choice4 === randomItem.correct) {
                 correctChoice = "d";
             }
 
             document.getElementById("solution").innerHTML =
                 "Solution: " +
-                questionItem.solution +
+                randomItem.solution +
                 `<h6 class="text-primary my-3  ">
                     
                     
-                    <a href="https://www.youtube.com/channel/UCfpCbdsDTtfJHCNUctWKBOw" class="text-decoration-none"  target="_blank">${questionItem.tag}</a>
+                    <a href="https://www.youtube.com/channel/UCfpCbdsDTtfJHCNUctWKBOw" class="text-decoration-none"  target="_blank">${randomItem.tag}</a>
                     
                     
                     </h6>`;
-            document.getElementById("qCount").innerHTML = questionItem.id;
+            document.getElementById("qCount").innerHTML = randomItem.id;
         }
 
-
+        loadQuestion(q);
 
         document.getElementById("next").addEventListener("click", updateQuestion);
 
@@ -606,12 +597,14 @@
             );
             hideSolution();
 
-            q += 1
+            var fixedList = [1, 2, 3, 4, 5, 28, 29, 30]
+            var randomFL = fixedList[Math.floor(Math.random() * fixedList.length)];
+            console.log(randomFL)
 
-            loadQuestion(q);
+            loadQuestion(randomFL);
         }
 
-        var timeLeft = 600000;
+        var timeLeft = 300000;
 
         var countDownDate = Date.now() + timeLeft;
         var x = setInterval(function () {
@@ -636,7 +629,7 @@
             document.getElementById("demo").innerHTML =
                 hours + ":" + minutes + ":" + seconds + "";
 
-            if (distance < 590000) {
+            if (distance < 295000) {
                 document.getElementById("demo").classList.add("text-danger");
             }
 
@@ -662,7 +655,89 @@
             }
         }
 
+        // Init SpeechSynth API
+        const synth = window.speechSynthesis;
 
+        // DOM Elements
+
+        const textInput = document.querySelector("#question");
+        const readBtn = document.querySelector("#read");
+
+        //Browser identifier
+        // Firefox 1.0+
+        var isFirefox = typeof InstallTrigger !== "undefined";
+
+        // Chrome 1+
+        var isChrome = !!window.chrome && !!window.chrome.webstore;
+
+        // Init voices array
+        let voices = [];
+
+        const getVoices = () => {
+            voices = synth.getVoices();
+
+            // Loop through voices and create an option for each one
+            voices.forEach((voice) => {
+                // Create option element
+                const option = document.createElement("option");
+                // Fill option with voice and language
+                option.textContent = voice.name + "(" + voice.lang + ")";
+
+                // Set needed option attributes
+                option.setAttribute("data-lang", voice.lang);
+                option.setAttribute("data-name", voice.name);
+            });
+        };
+
+        //Line 35, 36 causes voice list duplication
+        getVoices();
+        if (synth.onvoiceschanged !== undefined) {
+            synth.onvoiceschanged = getVoices;
+        }
+
+        //Fix for duplication, run code depending on the browser
+        if (isFirefox) {
+            getVoices();
+        }
+        if (isChrome) {
+            if (synth.onvoiceschanged !== undefined) {
+                synth.onvoiceschanged = getVoices;
+            }
+        }
+
+        // Speak
+        const speak = () => {
+            // Check if speaking
+            if (synth.speaking) {
+                console.error("Already speaking...");
+                return;
+            }
+            if (textInput.value !== "") {
+                // Get speak text
+                const speakText = new SpeechSynthesisUtterance(cQuestion);
+
+                // Speak end
+                speakText.onend = (e) => {
+                    console.log("Done reading...");
+                };
+
+                // Speak error
+                speakText.onerror = (e) => {
+                    console.error("Something went wrong");
+                };
+
+                // Speak
+                synth.speak(speakText);
+            }
+        };
+
+        // EVENT LISTENERS
+
+        // Text form submit
+        readBtn.addEventListener("click", (e) => {
+            e.preventDefault();
+            speak();
+        });
     </script>
     <script>
         var flag = 0,
@@ -751,13 +826,6 @@
             // text.style.backgroundColor = "green";
         }
 
-
-    </script>
-
-    <!-- <div class="border border-danger p-2 m-1"><i class="bi bi-geo-alt-fill text-dark"></i> 1 </div>
-<div class="bg-primary p-2 m-1 text-light"><i class="bi bi-bookmark-fill text-danger"></i> 2 </div> -->
-
-    <script>
         var open = false;
 
         function closeNav() {
@@ -775,7 +843,12 @@
         }
 
         openNav();
+    </script>
 
+    <!-- <div class="border border-danger p-2 m-1"><i class="bi bi-geo-alt-fill text-dark"></i> 1 </div>
+<div class="bg-primary p-2 m-1 text-light"><i class="bi bi-bookmark-fill text-danger"></i> 2 </div> -->
+
+    <script>
         let parent = document.querySelector("#questionNoBox");
 
 
@@ -785,21 +858,19 @@
                 let p = document.createElement("div");
                 p.classList = "dottedBox p-1 m-1";
                 p.style = "cursor:pointer";
-                p.setAttribute("id", `a${i}`);
-                p.setAttribute("onclick", `loadQuestion(${i})`);
-                p.textContent = i + 1;
+                p.setAttribute("id", `a${apiJson[i].id}`);
+                p.setAttribute("onclick", `loadQuestion(${apiJson[i].id})`);
+                p.textContent = `${apiJson[i].id}`;
 
                 let pointer = document.createElement("i");
                 // pointer.textContent = i
                 pointer.classList = "bi bi-geo-alt-fill text-dark d-none";
-                pointer.setAttribute("id", `pointer${i}`);
-                pointer.setAttribute("data-icon", i);
+                pointer.setAttribute("id", `pointer${apiJson[i].id}`);
+                pointer.setAttribute("data-icon", apiJson[i].id);
                 p.appendChild(pointer);
 
                 parent.appendChild(p);
             }
-            loadQuestion(q);
-            gotoquestion(0)
         }
 
         loadInputs();
@@ -815,7 +886,7 @@
 
             var gtq = document.getElementById(`pointer${i}`);
             gtq.classList.remove("d-none");
-            // closeNav();
+            closeNav();
         }
     </script>
 
