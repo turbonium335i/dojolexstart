@@ -365,41 +365,118 @@
 
         var apiLen = apiJson.length;
         var fixedList = []
-        var doneList = {}
 
-        var qbox = document.getElementById("question");
-        var cQuestion = "";
-        var q = 0
-
-        // load number of questinos from data api
         for (let i = 0; i < apiLen; i++) {
             fixedList.push(i)
         }
 
-        //event listnener for answers
+
+        var doneList = {}
+
+        var s = document.getElementById("solution");
+
+        function showSolution() {
+            s.classList.remove("d-none");
+        }
+
+        function hideSolution() {
+            s.classList.add("d-none");
+        }
+
         var a = document.getElementById("a");
         a.addEventListener("click", function () {
-            addAnswer(a);
+            checkAnswer(a);
         });
 
         var b = document.getElementById("b");
         b.addEventListener("click", function () {
-            addAnswer(b);
+            checkAnswer(b);
         });
 
         var c = document.getElementById("c");
         c.addEventListener("click", function () {
-            addAnswer(c);
+            checkAnswer(c);
         });
 
         var d = document.getElementById("d");
         d.addEventListener("click", function () {
-            addAnswer(d);
+            checkAnswer(d);
         });
 
-        document.getElementById("next").addEventListener("click", nextQuestion);
+        function cross(x) {
+            x.classList.toggle("crossout");
+        }
+
+        function showcalc() {
+            document.getElementById("calculatorx").classList.toggle("d-none");
+            var element = document.getElementById("calculatorx");
+            var headerOffset = 50;
+            var elementPosition = element.offsetTop - headerOffset;
+            var currentPosition = window.pageYOffset;
+            var targetPosition = elementPosition > currentPosition ? elementPosition : currentPosition;
+
+            window.scrollTo({
+                top: targetPosition,
+                behavior: "smooth"
+            });
+        }
+
+        var btag = document.getElementById("bookmark");
+        function bookmarktag() {
+            var btag = document.getElementById("bookmark");
+            btag.classList.toggle("text-danger");
+        }
+
+        var progressDone = 0;
+        var currentQuestion = [];
+        function checkAnswer(ans) {
+            console.log(currentQuestion.correct);
+            console.log(ans.dataset.id);
 
 
+            doneList[currentQuestion.id] = ans.id
+            console.log(doneList)
+
+            progressDone += 10;
+
+            a.classList.remove("crossout");
+            b.classList.remove("crossout");
+            c.classList.remove("crossout");
+            d.classList.remove("crossout");
+
+            // get code from vtest js
+
+            if (ans.dataset.id === currentQuestion.correct) {
+                ans.classList.remove("border-dark");
+                ans.classList.toggle("bg-success");
+                ans.classList.toggle("border-success");
+            } else {
+                cA = document.getElementById(correctChoice);
+                ans.classList.remove("border-dark");
+                cA.classList.remove("border-dark");
+                cA.classList.add("fw-bold", "border-success", "border-3");
+                ans.classList.toggle("bg-secondary");
+                ans.classList.toggle("border-danger");
+                console.log(correctChoice);
+            }
+
+            showSolution();
+            document
+                .getElementsByClassName("progress-bar")[0]
+                .setAttribute("style", "width:" + progressDone + "%");
+        }
+
+        var choiceA = "A";
+        var choiceB = "B";
+        var choiceC = "C";
+        var choiceD = "D";
+        var correctChoice = "X";
+
+
+
+        var qbox = document.getElementById("question");
+        var cQuestion = "";
+        var q = 0
 
         function loadQuestion(q) {
 
@@ -407,15 +484,27 @@
             b.classList.remove("crossout");
             c.classList.remove("crossout");
             d.classList.remove("crossout");
+            btag.classList.remove("text-danger");
 
 
-
+            // clear highlighting
             var qprompt = document.getElementById("qprompt");
             qprompt.innerHTML = "Which correctly completes the sentence?";
+
+            // var randomItem = apiJson[Math.floor(Math.random() * apiJson.length)];
+
+            // var randomItem = Object.values(apiJson).find(item => item.id === q);
 
             var questionItem = apiJson[q]
 
 
+            gotoquestion(q)
+
+            // var cn = (q.toString())
+            // console.log(doneList)
+            // if (cn in doneList) {
+            //     console.log(doneList[cn])
+            // }
 
             currentQuestion = questionItem;
             choiceA = questionItem.choice1;
@@ -462,43 +551,22 @@
                 "Solution: " +
                 questionItem.solution +
                 `<h6 class="text-primary my-3  ">
-        
-        
-        <a href="https://www.youtube.com/channel/UCfpCbdsDTtfJHCNUctWKBOw" class="text-decoration-none"  target="_blank">${questionItem.tag}</a>
-        
-        
-        </h6>`;
-            document.getElementById("qCount").innerHTML = (q + 1);
+                    
+                    
+                    <a href="https://www.youtube.com/channel/UCfpCbdsDTtfJHCNUctWKBOw" class="text-decoration-none"  target="_blank">${questionItem.tag}</a>
+                    
+                    
+                    </h6>`;
+            document.getElementById("qCount").innerHTML = questionItem.id;
         }
 
 
-        function addAnswer(ans) {
 
-            // console.log(currentQuestion.correct);
-            // console.log(ans.dataset.id);
-            doneList[currentQuestion.id] = ans.id
-            console.log(q, doneList)
+        document.getElementById("next").addEventListener("click", updateQuestion);
 
-            ans.classList.remove("border-dark");
-            ans.classList.toggle("bg-success");
-            ans.classList.toggle("border-success");
+        function updateQuestion() {
+            q += 1
 
-        }
-
-
-        loadQuestion(0)
-
-        function nextQuestion() {
-
-            if ((q + 1) < apiLen) {
-                q += 1
-                loadQuestion(q)
-            }
-
-
-        }
-
-        function resetChoices() {
 
             a.classList.remove(
                 "bg-success",
@@ -540,12 +608,226 @@
                 "fw-bold",
                 "border-3"
             );
-
+            hideSolution();
+            loadQuestion(q);
         }
+
+        var timeLeft = 600000;
+
+        var countDownDate = Date.now() + timeLeft;
+        var x = setInterval(function () {
+            var now = new Date().getTime();
+            var distance = countDownDate - now;
+            var hours = Math.floor(
+                (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+            );
+            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            if (hours < 10) {
+                hours = "0" + hours;
+            }
+            if (minutes < 10) {
+                minutes = "0" + minutes;
+            }
+            if (seconds < 10) {
+                seconds = "0" + seconds;
+            }
+
+            document.getElementById("demo").innerHTML =
+                hours + ":" + minutes + ":" + seconds + "";
+
+            if (distance < 590000) {
+                document.getElementById("demo").classList.add("text-danger");
+            }
+
+            if (distance < 0) {
+                clearInterval(x);
+                document.getElementById("demo").innerHTML = "TIME UP";
+                // window.location.href = '/index.html'
+            }
+
+            timeLeft -= 1000;
+        }, 1000);
+
+        function timerFunction() {
+            var timer = document.getElementById("timer");
+            var demo = document.getElementById("demo");
+
+            if (timer.classList.contains("timerOn")) {
+                demo.style.display = "none";
+                timer.classList.remove("timerOn");
+            } else {
+                demo.style.display = "block";
+                timer.classList.add("timerOn");
+            }
+        }
+
+
+    </script>
+    <script>
+        var flag = 0,
+            element = document;
+        element.addEventListener(
+            "touchstart",
+            function () {
+                flag = 0;
+            },
+            false
+        );
+        element.addEventListener(
+            "touchmove",
+            function () {
+                flag = 1;
+            },
+            false
+        );
+        element.addEventListener(
+            "touchend",
+            function () {
+                if (flag === 1) {
+                    getSelText();
+                }
+            },
+            false
+        );
+
+        var flag = 0,
+            element = document;
+        element.addEventListener(
+            "mousedown",
+            function () {
+                flag = 0;
+            },
+            false
+        );
+        element.addEventListener(
+            "mousemove",
+            function () {
+                flag = 1;
+            },
+            false
+        );
+        element.addEventListener(
+            "mouseup",
+            function () {
+                if (flag === 1) {
+                    getSelText();
+                }
+            },
+            false
+        );
+
+        // document.addEventListener("selectionchange", function (e) {
+        //     //do something, e.g. document.getSelection()
+        //     alert(e)
+        // });
+
+        function getSelText() {
+            var sel = window.getSelection
+                ? window.getSelection()
+                : document.selection.createRange(); // FF : IE
+            if (sel.getRangeAt) {
+                // thats for FF
+                var range = sel.getRangeAt(0);
+                var newNode = document.createElement("span");
+                newNode.setAttribute("class", "highlighter");
+                range.surroundContents(newNode);
+            } else {
+                //and thats for IE7
+                sel.pasteHTML(
+                    '<span class="highlighter">' + sel.htmlText + "</span>"
+                );
+            }
+        }
+
+        function clean() {
+            const elements = document.querySelectorAll("*");
+            elements.forEach((element) => {
+                element.classList.remove("highlighter");
+            });
+            var text = document.getElementById("question");
+            text.innerHTML = cQuestion;
+
+            // text.style.backgroundColor = "green";
+        }
+
 
     </script>
 
+    <!-- <div class="border border-danger p-2 m-1"><i class="bi bi-geo-alt-fill text-dark"></i> 1 </div>
+<div class="bg-primary p-2 m-1 text-light"><i class="bi bi-bookmark-fill text-danger"></i> 2 </div> -->
 
+    <script>
+        var open = false;
+
+        function closeNav() {
+            document.getElementById("mySidebar").style.height = "0px";
+            open = false;
+        }
+
+        function openNav() {
+            if (open == true) {
+                closeNav();
+            } else {
+                document.getElementById("mySidebar").style.height = "40vh";
+                open = true;
+            }
+        }
+
+        openNav();
+
+        let parent = document.querySelector("#questionNoBox");
+
+
+        function loadInputs() {
+
+            for (let i = 0; i < apiLen; i++) {
+                let p = document.createElement("div");
+                p.classList = "dottedBox p-1 m-1";
+                p.style = "cursor:pointer";
+                p.setAttribute("id", `a${i}`);
+                p.setAttribute("onclick", `loadQuestion(${i})`);
+                p.textContent = i + 1;
+
+                let pointer = document.createElement("i");
+                // pointer.textContent = i
+                pointer.classList = "bi bi-geo-alt-fill text-dark d-none";
+                pointer.setAttribute("id", `pointer${i}`);
+                pointer.setAttribute("data-icon", i);
+                p.appendChild(pointer);
+
+                parent.appendChild(p);
+            }
+            loadQuestion(0);
+            gotoquestion(0)
+        }
+
+        loadInputs();
+
+        function gotoquestion(i) {
+            const elements = document.querySelectorAll(".bi-geo-alt-fill");
+            elements.forEach((element) => {
+                element.classList.add("d-none");
+            });
+
+            // var text = document.getElementById("question");
+            // text.innerHTML = cQuestion;
+
+            var gtq = document.getElementById(`pointer${i}`);
+            gtq.classList.remove("d-none");
+            // closeNav();
+        }
+    </script>
+
+    <script src="https://www.desmos.com/api/v1.7/calculator.js?apiKey=dcb31709b452b1cf9dc26972add0fda6"></script>
+    <script>
+        var elt = document.getElementById('calculatorx');
+        var calculator = Desmos.GraphingCalculator(elt);
+        calculator.setExpression({ id: 'graph1', latex: 'y=x^2' });
+
+
+    </script>
 </body>
 
 </html>
