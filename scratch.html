@@ -59,6 +59,11 @@
             height: 0px;
             transition: 0.5s;
         }
+
+        .pastel {
+            background-color: #A7C7E7;
+
+        }
     </style>
 </head>
 
@@ -143,7 +148,8 @@
                     </div>
 
                     <div class="d-flex">
-                        <div class="flex-grow-1 border rounded mb-2 ms-lg-5 py-2 ps-2" id="a" style="cursor: pointer">
+                        <div class="flex-grow-1 border border-dark  rounded mb-2 ms-lg-5 py-2 ps-2" id="a"
+                            style="cursor: pointer">
                             A. Thisis a NO CHANGE.
                         </div>
 
@@ -152,7 +158,8 @@
                         </div>
                     </div>
                     <div class="d-flex">
-                        <div class="flex-grow-1 border rounded mb-2 ms-lg-5 py-2 ps-2" id="b" style="cursor: pointer">
+                        <div class="flex-grow-1 border border-dark  rounded mb-2 ms-lg-5 py-2 ps-2" id="b"
+                            style="cursor: pointer">
                             A. Thisis a NO CHANGE.
                         </div>
 
@@ -161,7 +168,8 @@
                         </div>
                     </div>
                     <div class="d-flex">
-                        <div class="flex-grow-1 border rounded mb-2 ms-lg-5 py-2 ps-2" id="c" style="cursor: pointer">
+                        <div class="flex-grow-1 border border-dark rounded mb-2 ms-lg-5 py-2 ps-2" id="c"
+                            style="cursor: pointer">
                             A. Thisis a NO CHANGE.
                         </div>
 
@@ -170,7 +178,8 @@
                         </div>
                     </div>
                     <div class="d-flex">
-                        <div class="flex-grow-1 border rounded mb-2 ms-lg-5 py-2 ps-2" id="d" style="cursor: pointer">
+                        <div class="flex-grow-1 border border-dark  rounded mb-2 ms-lg-5 py-2 ps-2" id="d"
+                            style="cursor: pointer">
                             A. Thisis a NO CHANGE.
                         </div>
 
@@ -365,7 +374,7 @@
 
         var apiLen = apiJson.length;
         var fixedList = []
-        var doneList = {}
+        var doneList = { 1: 'a', 2: 'c' }
 
         var qbox = document.getElementById("question");
         var cQuestion = "";
@@ -379,22 +388,22 @@
         //event listnener for answers
         var a = document.getElementById("a");
         a.addEventListener("click", function () {
-            addAnswer(a);
+            clickChoice(a);
         });
 
         var b = document.getElementById("b");
         b.addEventListener("click", function () {
-            addAnswer(b);
+            clickChoice(b);
         });
 
         var c = document.getElementById("c");
         c.addEventListener("click", function () {
-            addAnswer(c);
+            clickChoice(c);
         });
 
         var d = document.getElementById("d");
         d.addEventListener("click", function () {
-            addAnswer(d);
+            clickChoice(d);
         });
 
         document.getElementById("next").addEventListener("click", nextQuestion);
@@ -408,7 +417,14 @@
             c.classList.remove("crossout");
             d.classList.remove("crossout");
 
+            var bgColor = "bg-none"
+            var plusQ = q + 1
 
+            // var randomItem = Object.values(doneList).find(item => item.id === q);
+            if (plusQ in doneList) {
+                console.log(doneList[plusQ])
+                bgColor = 'pastel'
+            }
 
             var qprompt = document.getElementById("qprompt");
             qprompt.innerHTML = "Which correctly completes the sentence?";
@@ -426,22 +442,36 @@
             qbox.innerHTML = questionItem.question;
             cQuestion = questionItem.question;
 
-            document.getElementById("a").innerHTML =
+            a.innerHTML =
                 '<span class="fw-bold choice border border-dark px-1 rounded-circle" >A</span>&nbsp;&nbsp;' +
                 questionItem.choice1;
-            document.getElementById("a").classList.add("border-dark");
-            document.getElementById("b").innerHTML =
+            // a.classList.add(bgColor);
+
+            b.innerHTML =
                 '<span class="fw-bold choice border border-dark px-1 rounded-circle" >B</span>&nbsp;&nbsp;' +
                 questionItem.choice2;
-            document.getElementById("b").classList.add("border-dark");
-            document.getElementById("c").innerHTML =
+            // b.classList.add(bgColor);
+
+            c.innerHTML =
                 '<span class="fw-bold choice border border-dark px-1 rounded-circle" >C</span>&nbsp;&nbsp;' +
                 questionItem.choice3;
-            document.getElementById("c").classList.add("border-dark");
-            document.getElementById("d").innerHTML =
+            // c.classList.add(bgColor);
+
+            d.innerHTML =
                 '<span class="fw-bold choice border border-dark px-1 rounded-circle" >D</span>&nbsp;&nbsp;' +
                 questionItem.choice4;
-            document.getElementById("d").classList.add("border-dark");
+            // d.classList.add(bgColor);
+
+
+            //color background according donelist
+            try {
+                document.getElementById(doneList[plusQ]).classList.add(bgColor);
+            }
+            catch (err) {
+                console.log(err.message)
+            }
+
+
 
             a.dataset.id = questionItem.choice1;
             b.dataset.id = questionItem.choice2;
@@ -461,27 +491,26 @@
             document.getElementById("solution").innerHTML =
                 "Solution: " +
                 questionItem.solution +
-                `<h6 class="text-primary my-3  ">
-        
-        
+                `<h6 class="text-primary my-3">            
         <a href="https://www.youtube.com/channel/UCfpCbdsDTtfJHCNUctWKBOw" class="text-decoration-none"  target="_blank">${questionItem.tag}</a>
-        
-        
         </h6>`;
             document.getElementById("qCount").innerHTML = (q + 1);
         }
 
+        function addAnswer() {
 
-        function addAnswer(ans) {
+
+        }
+
+
+        function clickChoice(ans) {
 
             // console.log(currentQuestion.correct);
             // console.log(ans.dataset.id);
             doneList[currentQuestion.id] = ans.id
             console.log(q, doneList)
+            ans.classList.toggle("pastel");
 
-            ans.classList.remove("border-dark");
-            ans.classList.toggle("bg-success");
-            ans.classList.toggle("border-success");
 
         }
 
@@ -492,6 +521,7 @@
 
             if ((q + 1) < apiLen) {
                 q += 1
+                resetChoices()
                 loadQuestion(q)
             }
 
@@ -501,44 +531,21 @@
         function resetChoices() {
 
             a.classList.remove(
-                "bg-success",
-                "border-success",
-                "bg-secondary",
-                "border-secondary",
-                "border-danger",
-                "border-dark",
-                "fw-bold",
-                "border-3"
+                "pastel",
+
+
             );
             b.classList.remove(
-                "bg-success",
-                "border-success",
-                "bg-secondary",
-                "border-secondary",
-                "border-danger",
-                "border-dark",
-                "fw-bold",
-                "border-3"
+                "pastel",
+
             );
             c.classList.remove(
-                "bg-success",
-                "border-success",
-                "bg-secondary",
-                "border-secondary",
-                "border-danger",
-                "border-dark",
-                "fw-bold",
-                "border-3"
+                "pastel",
+
             );
             d.classList.remove(
-                "bg-success",
-                "border-success",
-                "bg-secondary",
-                "border-secondary",
-                "border-danger",
-                "border-dark",
-                "fw-bold",
-                "border-3"
+                "pastel",
+
             );
 
         }
