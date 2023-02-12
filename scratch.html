@@ -148,7 +148,7 @@
                     </div>
 
                     <div class="d-flex">
-                        <div class="flex-grow-1 border border-dark  rounded mb-2 ms-lg-5 py-2 ps-2" id="a"
+                        <div class="flex-grow-1 border border-dark  rounded mb-2 ms-lg-5 py-2 ps-2 choice" id="a"
                             style="cursor: pointer">
                             A. Thisis a NO CHANGE.
                         </div>
@@ -158,7 +158,7 @@
                         </div>
                     </div>
                     <div class="d-flex">
-                        <div class="flex-grow-1 border border-dark  rounded mb-2 ms-lg-5 py-2 ps-2" id="b"
+                        <div class="flex-grow-1 border border-dark  rounded mb-2 ms-lg-5 py-2 ps-2  choice" id="b"
                             style="cursor: pointer">
                             A. Thisis a NO CHANGE.
                         </div>
@@ -168,7 +168,7 @@
                         </div>
                     </div>
                     <div class="d-flex">
-                        <div class="flex-grow-1 border border-dark rounded mb-2 ms-lg-5 py-2 ps-2" id="c"
+                        <div class="flex-grow-1 border border-dark rounded mb-2 ms-lg-5 py-2 ps-2 choice" id="c"
                             style="cursor: pointer">
                             A. Thisis a NO CHANGE.
                         </div>
@@ -178,7 +178,7 @@
                         </div>
                     </div>
                     <div class="d-flex">
-                        <div class="flex-grow-1 border border-dark  rounded mb-2 ms-lg-5 py-2 ps-2" id="d"
+                        <div class="flex-grow-1 border border-dark  rounded mb-2 ms-lg-5 py-2 ps-2 choice" id="d"
                             style="cursor: pointer">
                             A. Thisis a NO CHANGE.
                         </div>
@@ -502,14 +502,33 @@
 
         }
 
+        var currentQuestion = [];
 
         function clickChoice(ans) {
 
             // console.log(currentQuestion.correct);
             // console.log(ans.dataset.id);
-            doneList[currentQuestion.id] = ans.id
-            console.log(q, doneList)
-            ans.classList.toggle("pastel");
+            const elements = document.querySelectorAll(".choice");
+            elements.forEach((element) => {
+                element.classList.remove("pastel");
+            });
+
+
+            var currentNo = (currentQuestion.id.toString())
+
+            if (currentNo in doneList && doneList[currentNo] === ans.id) {
+                delete doneList[currentNo]
+                console.log(doneList)
+                ans.classList.remove("pastel");
+            }
+            else {
+                doneList[currentQuestion.id] = ans.id
+                console.log(doneList)
+                ans.classList.add("pastel");
+            }
+
+            // console.log(q, doneList)
+
 
 
         }
