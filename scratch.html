@@ -495,6 +495,8 @@
         <a href="https://www.youtube.com/channel/UCfpCbdsDTtfJHCNUctWKBOw" class="text-decoration-none"  target="_blank">${questionItem.tag}</a>
         </h6>`;
             document.getElementById("qCount").innerHTML = (q + 1);
+
+            colorBoxes()
         }
 
         var currentQuestion = [];
@@ -513,23 +515,51 @@
 
             if (currentNo in doneList && doneList[currentNo] === ans.id) {
                 delete doneList[currentNo]
-                console.log(doneList)
                 ans.classList.remove("pastel");
             }
             else {
                 doneList[currentNo] = ans.id
-                console.log(doneList)
                 ans.classList.add("pastel");
             }
 
             // console.log(q, doneList)
+            const navboxes = document.querySelectorAll(".dottedBox");
+            // navboxes.forEach((element) => {
+            // console.log(element)
+            // element.classList.add("pastel"); 
+            // });
 
+            colorBoxes()
+
+        }
+
+        function colorBoxes() {
+
+            console.log(doneList)
+
+            const navboxes = document.querySelectorAll(".dottedBox");
+            navboxes.forEach((element) => {
+
+
+                if (doneList[parseInt(element.dataset.box) + 1]) {
+                    element.classList.add("pastel");
+                } else {
+                    element.classList.remove("pastel");
+
+                }
+            });
+
+            // for (let i = 0; i < doneList.length; i++) {
+            //     if ((doneList[i]) in doneList) {
+            //         console.log(i + 1)
+
+            //     }
+            // }
 
 
         }
 
 
-        loadQuestion(0)
 
         function nextQuestion() {
 
@@ -594,6 +624,7 @@
                 p.style = "cursor:pointer";
                 p.setAttribute("id", `a${i}`);
                 p.setAttribute("onclick", `gotoquestion(${i})`);
+                p.setAttribute("data-box", i);
                 p.textContent = i + 1;
 
                 let pointer = document.createElement("i");
