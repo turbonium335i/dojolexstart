@@ -509,7 +509,7 @@
             });
 
 
-            var currentNo = (currentQuestion.id.toString())
+            var currentNo = q + 1
 
             if (currentNo in doneList && doneList[currentNo] === ans.id) {
                 delete doneList[currentNo]
@@ -517,7 +517,7 @@
                 ans.classList.remove("pastel");
             }
             else {
-                doneList[currentQuestion.id] = ans.id
+                doneList[currentNo] = ans.id
                 console.log(doneList)
                 ans.classList.add("pastel");
             }
@@ -598,7 +598,11 @@
 
                 let pointer = document.createElement("i");
                 // pointer.textContent = i
+
+
+                pointer.classList = "bi bi-geo-alt-fill text-dark";
                 pointer.classList = "bi bi-geo-alt-fill text-dark d-none";
+
                 pointer.setAttribute("id", `pointer${i}`);
                 pointer.setAttribute("data-icon", i);
                 p.appendChild(pointer);
@@ -621,8 +625,11 @@
 
             resetChoices()
             loadQuestion(i)
+            q = i
 
         }
+
+        gotoquestion(0)
 
     </script>
 
