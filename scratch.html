@@ -215,7 +215,7 @@
     </div>
     <div class="navbar2" id="mySidebar">
         <div class="bg-secondary py-2 text-light mb-3">
-            <span class="mx-3 pt-2 text-light">Section 1: Reading and Writing Questions</span>
+            <span class="mx-3 pt-2 text-light">Verbal Section Module 1</span>
             <p class="text-warning float-end mx-3" href="#contact" onclick="closeNav()" style="cursor: pointer">
                 CLOSE X
             </p>
@@ -430,7 +430,24 @@
             colorBookMarks()
         }
 
+        //cross out function
+
+        function cross(x) {
+            x.classList.toggle("crossout");
+        }
+
+        function clearCross() {
+            a.classList.remove("crossout");
+            b.classList.remove("crossout");
+            c.classList.remove("crossout");
+            d.classList.remove("crossout");
+        }
+
+        //LOAD QUESTIONS FUNCTION
+
         function loadQuestion(q) {
+
+            window.scrollTo(0, 0);
 
             a.classList.remove("crossout");
             b.classList.remove("crossout");
@@ -518,6 +535,7 @@
 
             colorBoxes()
             bookmarktag(q + 1)
+            clearCross()
 
 
         }
@@ -609,6 +627,9 @@
 
         }
 
+
+
+
         // slide up box choice
 
         var open = false;
@@ -687,10 +708,166 @@
 
         gotoquestion(0)
 
+        // TIMER FUNCTION
+        var timeLeft = 600000;
+
+        var countDownDate = Date.now() + timeLeft;
+        var x = setInterval(function () {
+            var now = new Date().getTime();
+            var distance = countDownDate - now;
+            var hours = Math.floor(
+                (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+            );
+            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            if (hours < 10) {
+                hours = "0" + hours;
+            }
+            if (minutes < 10) {
+                minutes = "0" + minutes;
+            }
+            if (seconds < 10) {
+                seconds = "0" + seconds;
+            }
+
+            document.getElementById("demo").innerHTML =
+                hours + ":" + minutes + ":" + seconds + "";
+
+            if (distance < 295000) {
+                document.getElementById("demo").classList.add("text-danger");
+            }
+
+            if (distance < 0) {
+                clearInterval(x);
+                document.getElementById("demo").innerHTML = "TIME UP";
+                // window.location.href = '/index.html'
+            }
+
+            timeLeft -= 1000;
+        }, 1000);
+
+        function timerFunction() {
+            var timer = document.getElementById("timer");
+            var demo = document.getElementById("demo");
+
+            if (timer.classList.contains("timerOn")) {
+                demo.style.display = "none";
+                timer.classList.remove("timerOn");
+            } else {
+                demo.style.display = "block";
+                timer.classList.add("timerOn");
+            }
+        }
+
 
 
     </script>
+    <script>
 
+        // HIGHLIGHTER FUNCTION
+        var flag = 0,
+            element = document;
+        element.addEventListener(
+            "touchstart",
+            function () {
+                flag = 0;
+            },
+            false
+        );
+        element.addEventListener(
+            "touchmove",
+            function () {
+                flag = 1;
+            },
+            false
+        );
+        element.addEventListener(
+            "touchend",
+            function () {
+                if (flag === 1) {
+                    getSelText();
+                }
+            },
+            false
+        );
+
+        var flag = 0,
+            element = document;
+        element.addEventListener(
+            "mousedown",
+            function () {
+                flag = 0;
+            },
+            false
+        );
+        element.addEventListener(
+            "mousemove",
+            function () {
+                flag = 1;
+            },
+            false
+        );
+        element.addEventListener(
+            "mouseup",
+            function () {
+                if (flag === 1) {
+                    getSelText();
+                }
+            },
+            false
+        );
+
+        function getSelText() {
+            var sel = window.getSelection
+                ? window.getSelection()
+                : document.selection.createRange(); // FF : IE
+            if (sel.getRangeAt) {
+                // thats for FF
+                var range = sel.getRangeAt(0);
+                var newNode = document.createElement("span");
+                newNode.setAttribute("class", "highlighter");
+                range.surroundContents(newNode);
+            } else {
+                //and thats for IE7
+                sel.pasteHTML(
+                    '<span class="highlighter">' + sel.htmlText + "</span>"
+                );
+            }
+        }
+
+        function clean() {
+            const elements = document.querySelectorAll("*");
+            elements.forEach((element) => {
+                element.classList.remove("highlighter");
+            });
+            var text = document.getElementById("question");
+            text.innerHTML = cQuestion;
+        }
+    </script>
+    <script src="https://www.desmos.com/api/v1.7/calculator.js?apiKey=dcb31709b452b1cf9dc26972add0fda6"></script>
+    <script>
+        //CALCULATOR FUNCTION
+
+        function showcalc() {
+            document.getElementById("calculatorx").classList.toggle("d-none");
+            var element = document.getElementById("calculatorx");
+            var headerOffset = 50;
+            var elementPosition = element.offsetTop - headerOffset;
+            var currentPosition = window.pageYOffset;
+            var targetPosition = elementPosition > currentPosition ? elementPosition : currentPosition;
+
+            window.scrollTo({
+                top: targetPosition,
+                behavior: "smooth"
+            });
+        }
+
+
+        var elt = document.getElementById('calculatorx');
+        var calculator = Desmos.GraphingCalculator(elt);
+        calculator.setExpression({ id: 'graph1', latex: 'y=x^2' });
+    </script>
 
 </body>
 
