@@ -497,11 +497,6 @@
             document.getElementById("qCount").innerHTML = (q + 1);
         }
 
-        function addAnswer() {
-
-
-        }
-
         var currentQuestion = [];
 
         function clickChoice(ans) {
@@ -566,6 +561,66 @@
                 "pastel",
 
             );
+
+        }
+
+        // slide up box choice
+
+        var open = false;
+
+        function closeNav() {
+            document.getElementById("mySidebar").style.height = "0px";
+            open = false;
+        }
+
+        function openNav() {
+            if (open == true) {
+                closeNav();
+            } else {
+                document.getElementById("mySidebar").style.height = "40vh";
+                open = true;
+            }
+        }
+
+        openNav();
+
+        let parent = document.querySelector("#questionNoBox");
+
+        function loadInputs() {
+
+            for (let i = 0; i < apiLen; i++) {
+                let p = document.createElement("div");
+                p.classList = "dottedBox p-1 m-1";
+                p.style = "cursor:pointer";
+                p.setAttribute("id", `a${i}`);
+                p.setAttribute("onclick", `gotoquestion(${i})`);
+                p.textContent = i + 1;
+
+                let pointer = document.createElement("i");
+                // pointer.textContent = i
+                pointer.classList = "bi bi-geo-alt-fill text-dark d-none";
+                pointer.setAttribute("id", `pointer${i}`);
+                pointer.setAttribute("data-icon", i);
+                p.appendChild(pointer);
+
+                parent.appendChild(p);
+            }
+
+        }
+
+        loadInputs();
+
+        function gotoquestion(i) {
+            const elements = document.querySelectorAll(".bi-geo-alt-fill");
+            elements.forEach((element) => {
+                element.classList.add("d-none");
+            });
+
+            var gtq = document.getElementById(`pointer${i}`);
+            gtq.classList.remove("d-none");
+
+            resetChoices()
+            loadQuestion(i)
 
         }
 
