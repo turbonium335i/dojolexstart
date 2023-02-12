@@ -139,7 +139,7 @@
                         style="background-color: #d3d3d3; border-bottom: dotted gray">
                         <div class="bg-dark text-light px-1" span id="qCount"></div>
                         <div class="pe-1">
-                            <i class="bi bi-bookmark-fill" id="bookmark" onclick="bookmarktag()"></i>
+                            <i class="bi bi-bookmark-fill" id="bookmark" onclick="addBookMark()"></i>
                         </div>
                     </div>
 
@@ -224,7 +224,7 @@
         <div class="border rounded container py-2">
             <div class="d-flex justify-content-center my-2">
                 <div class="ms-3">
-                    Current <i class="bi bi-geo-alt-fill text-dark"></i>
+                    Current <i class="bi bi-geo-alt-fill"></i>
                 </div>
                 <div class="ms-3">
                     Unanswered <i class="bi bi-bounding-box-circles"></i>
@@ -236,12 +236,7 @@
             <hr />
 
             <div id="questionNoBox" class="d-flex justify-content-center flex-wrap">
-                <div class="border border-danger p-1 m-1">
-                    <i class="bi bi-geo-alt-fill text-dark"></i> 1
-                </div>
-                <div class="bg-primary p-1 m-1 text-light">
-                    <i class="bi bi-bookmark-fill text-danger"></i> 2
-                </div>
+
             </div>
         </div>
         <div class="py-3 pe-2 pe-sm-5">
@@ -375,6 +370,7 @@
         var apiLen = apiJson.length;
         var fixedList = []
         var doneList = { 1: 'a', 2: 'c' }
+        var markList = { 1: 'a', 2: 'c' }
 
         var qbox = document.getElementById("question");
         var cQuestion = "";
@@ -408,7 +404,31 @@
 
         document.getElementById("next").addEventListener("click", nextQuestion);
 
+        var btag = document.getElementById("bookmark");
+        function bookmarktag(n) {
 
+            if (markList[n]) {
+                btag.classList.add("text-danger");
+            } else {
+                btag.classList.remove("text-danger");
+            }
+            colorBookMarks()
+        }
+
+        function addBookMark() {
+
+            var cqn = q + 1
+
+            if (markList[cqn]) {
+                delete markList[cqn]
+                btag.classList.remove("text-danger");
+            } else {
+                markList[cqn] = 'M'
+                btag.classList.add("text-danger");
+            }
+            console.log(markList)
+            colorBookMarks()
+        }
 
         function loadQuestion(q) {
 
@@ -497,6 +517,8 @@
             document.getElementById("qCount").innerHTML = (q + 1);
 
             colorBoxes()
+            bookmarktag(q + 1)
+
         }
 
         var currentQuestion = [];
@@ -522,41 +544,33 @@
                 ans.classList.add("pastel");
             }
 
-            // console.log(q, doneList)
-            const navboxes = document.querySelectorAll(".dottedBox");
-            // navboxes.forEach((element) => {
-            // console.log(element)
-            // element.classList.add("pastel"); 
-            // });
-
             colorBoxes()
+
 
         }
 
         function colorBoxes() {
 
-            console.log(doneList)
-
             const navboxes = document.querySelectorAll(".dottedBox");
             navboxes.forEach((element) => {
-
-
                 if (doneList[parseInt(element.dataset.box) + 1]) {
                     element.classList.add("pastel");
                 } else {
                     element.classList.remove("pastel");
-
                 }
             });
+        }
 
-            // for (let i = 0; i < doneList.length; i++) {
-            //     if ((doneList[i]) in doneList) {
-            //         console.log(i + 1)
+        function colorBookMarks() {
 
-            //     }
-            // }
-
-
+            const bookboxes = document.querySelectorAll(".booker");
+            bookboxes.forEach((element) => {
+                if (markList[parseInt(element.dataset.markno) + 1]) {
+                    element.classList.remove("d-none");
+                } else {
+                    element.classList.add("d-none");
+                }
+            });
         }
 
 
@@ -631,12 +645,22 @@
                 // pointer.textContent = i
 
 
-                pointer.classList = "bi bi-geo-alt-fill text-dark";
-                pointer.classList = "bi bi-geo-alt-fill text-dark d-none";
 
+                pointer.classList = "bi bi-geo-alt-fill text-dark d-none pointer";
                 pointer.setAttribute("id", `pointer${i}`);
                 pointer.setAttribute("data-icon", i);
+
+
                 p.appendChild(pointer);
+
+                let marker = document.createElement("i");
+
+                marker.classList = "bi bi-bookmark-fill text-danger fw-light booker d-none";
+                marker.setAttribute("id", `marker${i}`);
+                marker.setAttribute("data-markno", i);
+                marker.style = "font-size: .6em;  ";
+
+                p.appendChild(marker);
 
                 parent.appendChild(p);
             }
@@ -646,7 +670,7 @@
         loadInputs();
 
         function gotoquestion(i) {
-            const elements = document.querySelectorAll(".bi-geo-alt-fill");
+            const elements = document.querySelectorAll(".pointer");
             elements.forEach((element) => {
                 element.classList.add("d-none");
             });
@@ -661,6 +685,8 @@
         }
 
         gotoquestion(0)
+
+
 
     </script>
 
