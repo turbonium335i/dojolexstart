@@ -105,7 +105,7 @@
 
     <div class="container my-3">
         <div class="d-flex justify-content-between pb-1">
-            <span class="fw-bold h5"> Section 1: Verbal Module 1</span>
+            <span class="fw-bold h5">Reading & Writing Module 1</span>
             <div>
                 <!-- <span class="border border-dark rounded px-1 mb-1 me-1" onclick="fullscreen()" style="cursor: pointer;">
                     <i class="bi bi-window-fullscreen"></i> F11
@@ -135,9 +135,9 @@
                     <div class="mb-5 py-4 fw-bold" id="question">
                         Along the highway <u>is</u> a dog and a cat.
                     </div>
-                    <button class="btn py-2 btn-outline-warning text-dark" id="clear" onclick="clean()">
+                    <!-- <button class="btn py-2 btn-outline-warning text-dark" id="clear" onclick="clean()">
                         <i class="bi bi-eraser"></i> Highlights
-                    </button>
+                    </button> -->
                 </div>
                 <div class="col-12 col-md-6">
                     <div class="d-flex justify-content-between mt-4 mb-2 ms-lg-5 fw-bold"
@@ -193,9 +193,13 @@
                         </div>
                     </div>
                     <div class="text-end me-lg-3 my-4">
-                        <button type="button" class="btn btn-outline-success rounded-pill" id="read">
-                            <i class="bi bi-soundwave"></i>
+
+                        <button class="btn btn-outline-warning rounded-pill" id="clear" onclick="clean()">
+                            <i class="bi bi-eraser"></i>
                         </button>
+                        <!-- <button type="button" class="btn btn-outline-success rounded-pill" id="read">
+                            <i class="bi bi-soundwave"></i>
+                        </button> -->
 
                         <button type="button" class="btn btn-outline-primary rounded-pill" id="next">
                             Next <i class="bi bi-arrow-right-circle"></i>
@@ -220,7 +224,7 @@
     </div>
     <div class="navbar2" id="mySidebar">
         <div class="bg-secondary py-2 text-light mb-3">
-            <span class="mx-3 pt-2 text-light">Verbal Section Module 1</span>
+            <span class="mx-3 pt-2 text-light">Reading & Writing Module 1</span>
             <p class="text-warning float-end mx-3" href="#contact" onclick="closeNav()" style="cursor: pointer">
                 CLOSE X
             </p>
@@ -528,35 +532,13 @@
                 console.log("blank")
             }
 
-
-
-            a.dataset.id = questionItem.choice1;
-            b.dataset.id = questionItem.choice2;
-            c.dataset.id = questionItem.choice3;
-            d.dataset.id = questionItem.choice4;
-
-            if (questionItem.choice1 === questionItem.correct) {
-                correctChoice = "a";
-            } else if (questionItem.choice2 === questionItem.correct) {
-                correctChoice = "b";
-            } else if (questionItem.choice3 === questionItem.correct) {
-                correctChoice = "c";
-            } else if (questionItem.choice4 === questionItem.correct) {
-                correctChoice = "d";
-            }
-
-            document.getElementById("solution").innerHTML =
-                "Solution: " +
-                questionItem.solution +
-                `<h6 class="text-primary my-3">            
-        <a href="https://www.youtube.com/channel/UCfpCbdsDTtfJHCNUctWKBOw" class="text-decoration-none"  target="_blank">${questionItem.tag}</a>
-        </h6>`;
             document.getElementById("qCount").innerHTML = (q + 1);
 
             colorBoxes()
             bookmarktag(q + 1)
             clearCross()
             updateBar()
+            clean()
 
 
         }
