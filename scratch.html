@@ -426,6 +426,16 @@
         });
 
         document.getElementById("next").addEventListener("click", nextQuestion);
+        // CLEAR HIGHLIGHT FUNCTION
+
+        function clean() {
+            const elements = document.querySelectorAll("*");
+            elements.forEach((element) => {
+                element.classList.remove("highlighter");
+            });
+            var text = document.getElementById("question");
+            text.innerHTML = cQuestion;
+        }
 
         var btag = document.getElementById("bookmark");
         function bookmarktag(n) {
@@ -850,14 +860,6 @@
             }
         }
 
-        function clean() {
-            const elements = document.querySelectorAll("*");
-            elements.forEach((element) => {
-                element.classList.remove("highlighter");
-            });
-            var text = document.getElementById("question");
-            text.innerHTML = cQuestion;
-        }
     </script>
     <script src="https://www.desmos.com/api/v1.7/calculator.js?apiKey=dcb31709b452b1cf9dc26972add0fda6"></script>
     <script>
