@@ -2,36 +2,68 @@
 <html lang="en">
 
 <head>
-    <!-- Required meta tags -->
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>dojolex analytics</title>
-    <link rel="shortcut icon" type="image/png"
-        href="https://i.postimg.cc/TwPQwwDF/204-2049751-network-icon-red-network-icon-png.png">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
-    <script src="https://code.jquery.com/jquery-3.5.1.js"
-        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>dojolex.com</title>
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <!-- Bootstrap icons-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css" />
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet"
+        type="text/css" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="css/styles.css" rel="stylesheet" />
     <style>
-        .popover-header {
-            background: black;
+        .choice {
+            color: black;
         }
 
-        .popover-content {
-            background: #ffff99;
+        .highlighter {
+            background: gold;
+        }
+
+        .progresscolor {
+            background-color: #0f5dac
+        }
+
+        .crossout {
+            text-decoration: line-through;
+            cursor: pointer;
+            color: #a9a9a9;
+        }
+
+        @media (min-width: 768px) {
+            #endborder {
+                border-right-style: inset;
+                border-color: #f5f5f5;
+                border-width: 1px;
+            }
+        }
+
+        .dottedBox {
+            border-style: dotted;
+            border-color: silver;
+            border-width: 2px;
+        }
+
+        .navbar2 {
+            overflow-y: scroll;
+            overflow-x: hidden;
+            background-color: white;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            height: 0px;
+            transition: 0.5s;
         }
     </style>
-
-
 </head>
 
-<body class="bg-light text-dark d-flex flex-column min-vh-100">
-
-
-
-    <nav class="navbar navbar-expand-md navbar-light bg-light">
+<body>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
         <div class="container-fluid">
             <a class="navbar-brand" href="/index.html"><img
                     src="https://i.postimg.cc/TwPQwwDF/204-2049751-network-icon-red-network-icon-png.png"
@@ -79,7 +111,7 @@
 
 
                 <a class=" " href="/index.html" style="text-decoration:none;">
-                    Last: 2023-1-26</a>
+                    Last: 2023-02-02</a>
 
 
             </h5><br><br>
@@ -104,7 +136,7 @@
                 </div>
                 <div class="col ">
 
-                    <h5>Verbal:<span class="text-warning"> 730 </span></h5>
+                    <h5>Verbal:<span class="text-primary"> 730 </span></h5>
                     <h6>SuperScore: 730</h6>
                 </div>
                 <div class="col ">
@@ -1026,7 +1058,7 @@
         <br>
         <br>
         <script>
-            Chart.defaults.color = 'silver';
+            Chart.defaults.color = 'black';
             var ctx = document.getElementById('myChart').getContext('2d');
             var chart = new Chart(ctx, {
                 // The type of chart we want to create
@@ -1062,7 +1094,7 @@
             });
         </script>
         <script>
-            Chart.defaults.color = 'silver';
+            Chart.defaults.color = 'gray';
             var ctx = document.getElementById('myChart2');
             var myChart = new Chart(ctx, {
                 type: 'line',
