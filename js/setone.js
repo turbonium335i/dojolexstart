@@ -5,7 +5,7 @@ const testOne = {
     "answer A": "answer A",
     "answer B": "answer B",
     "answer C": "answer C",
-    "answers D": "answers D",
+    "answer D": "answer D",
     correct: "correct",
     solutions: "solutions",
     "3 tags": "3 tags",
@@ -23,7 +23,7 @@ const testOne = {
     "answer A": "demands",
     "answer B": "speculates",
     "answer C": "doubts",
-    "answers D": "establishes",
+    "answer D": "establishes",
     correct: "speculates",
     solutions:
       "Choice B is the best answer because it most logically completes the text’s discussion of Ochoa’s prediction that humans will one day need to live in places other than Earth. As used in this context, “speculates” would mean puts forward an idea without firm evidence. The text states that Ochoa “doesn’t have a definite idea” about when humans might need to live in other environments and characterizes Ochoa’s prediction as a “conjecture,” or a conclusion presented without convincing evidence. This context indicates that Ochoa speculates when she makes this prediction",
@@ -42,7 +42,7 @@ const testOne = {
     "answer A": "impartial",
     "answer B": "offhand",
     "answer C": "persistent",
-    "answers D": "mandatory",
+    "answer D": "mandatory",
     correct: "persistent",
     solutions:
       "Choice C is the best answer because it most logically completes the text’s discussion of Annie Dodge Wauneka’s work as a Navajo Nation legislator. As used in this context, “persistent” means existing continuously. The text states that Wauneka “continuously worked to promote public health,” traveling extensively and authoring a medical dictionary; this indicates that Wauneka’s effort was persistent.",
@@ -61,7 +61,7 @@ const testOne = {
     "answer A": "circumvents",
     "answer B": "eclipses",
     "answer C": "fabricates",
-    "answers D": "exemplifies",
+    "answer D": "exemplifies",
     correct: "exemplifies",
     solutions:
       "Choice D is the best answer because it most logically completes the text’s discussion of the collaboration between the Crow Tribe and Montana State University. As used in this context, “exemplifies” means demonstrates. The text conveys how the Crow Tribe–Montana State University collaboration serves to illustrate the model of community-based participatory research introduced earlier in the text and expanded on later in the text.",
@@ -80,7 +80,7 @@ const testOne = {
     "answer A": "synchronization",
     "answer B": "hibernation",
     "answer C": "prediction",
-    "answers D": "moderation",
+    "answer D": "moderation",
     correct: "synchronization",
     solutions:
       "Choice A is the best answer because it most logically completes the text’s discussion of a relationship between the dodder plant and its host plant. As used in this context, “synchronization” means the act of things happening at the same time. The text indicates that the dodder and its host plant flower in unison and that this synchronization occurs because the dodder makes use of a protein produced by the host shortly before flowering.",
@@ -99,7 +99,7 @@ const testOne = {
     "answer A": "a discernible",
     "answer B": "a straightforward",
     "answer C": "an inconclusive",
-    "answers D": "an unbiased",
+    "answer D": "an unbiased",
     correct: "proclaims",
     solutions:
       "Choice B is the best answer because it most logically completes the text’s description of efforts to explain the existence of planets in binary star systems. As used in this context, describing an explanation as “a straightforward” one would mean that the explanation is direct and uncomplicated. The text asserts that since it should be “nearly impossible” for planets to form in binary star systems, it’s “not surprising” that there isn’t a straightforward explanation for the existence of planets in such systems; the fact that one potential approach involves “complex” factors offers further contextual support for this idea",
@@ -118,7 +118,7 @@ const testOne = {
     "answer A": "repudiates",
     "answer B": "proclaims",
     "answer C": "foretells",
-    "answers D": "recants",
+    "answer D": "recants",
     correct: "repudiates",
     solutions:
       "Choice A is the best answer because it most logically completes the text’s discussion of Sterlin Harjo’s approach to representing Native characters on television. As used in this context, “repudiates” means rejects or refuses to have anything to do with. The text indicates that television shows tend to depict Native characters as living long ago, but that Harjo’s series Reservation Dogs focuses on Native teenagers in the present day, representing a “rejection” of the typical approach to depicting Native characters. This context thus indicates that Harjo repudiates television’s general tendency regarding Native characters.",
@@ -136,7 +136,7 @@ const testOne = {
     "answer A": "To discuss von Ahn’s invention of reCAPTCHA",
     "answer B": "To explain how digital scanners work",
     "answer C": "To call attention to von Ahn’s book-digitizing project",
-    "answers D": "To indicate how popular reCAPTCHA is",
+    "answer D": "To indicate how popular reCAPTCHA is",
     correct: "To discuss von Ahn’s invention of reCAPTCHA",
     solutions:
       "Choice A is the best answer because it most accurately states the main purpose of the text. After providing a brief introduction to computer scientist Luis von Ahn, the text focuses on discussing how von Ahn’s digitization work led to the invention of a digital security test known as reCAPTCHA. Choice B is incorrect because the text doesn’t address how digital scanners work. Choice C is incorrect. Although the text mentions von Ahn’s book-digitizing project, that information is provided as a detail, not as the main purpose of the text. Choice D is incorrect because the text doesn’t provide any indication of reCAPTCHA’s popularity; instead, it describes reCAPTCHA’s origin.",
@@ -157,7 +157,7 @@ const testOne = {
     "answer B":
       "It establishes that a character is experiencing an internal conflict.",
     "answer C": "It makes an assertion that the next sentence then expands on.",
-    "answers D":
+    "answer D":
       "It illustrates an idea that is introduced in the previous sentence.",
     correct:
       "It illustrates an idea that is introduced in the previous sentence.",
@@ -179,7 +179,7 @@ const testOne = {
     "answer B":
       "To present a specific example that illustrates the study’s findings",
     "answer C": "To explain part of the methodology used in the team’s study",
-    "answers D":
+    "answer D":
       "To call out a challenge the team faced in conducting its analysis",
     correct: "To explain part of the methodology used in the team’s study",
     solutions:
@@ -198,7 +198,7 @@ const testOne = {
     "answer A": "She wishes that more ladies would visit her.",
     "answer B": "Birthdays are her favorite special occasion.",
     "answer C": "She creates stories and poems for her children.",
-    "answers D": "Reading to her children is her favorite activity.",
+    "answer D": "Reading to her children is her favorite activity.",
     correct: "She creates stories and poems for her children.",
     solutions:
       "Choice C is the best answer because it describes something that is true of Mother, as presented in the text. The text indicates that in addition to other activities, Mother writes stories for her children while they are at school and makes up “funny pieces of poetry” for certain occasions",
@@ -219,7 +219,7 @@ const testOne = {
       "To establish that a certain writer has read extensively about a variety of topics",
     "answer C":
       "To call attention to a certain writer’s careful and elaborately detailed writing process",
-    "answers D":
+    "answer D":
       "To recount fond memories of an afternoon spent in nature with a certain writer",
     correct:
       "To praise a certain writer for being especially perceptive regarding people and nature",
@@ -243,7 +243,7 @@ const testOne = {
       '"These immense meadows, these interminable rivers, you are immense / and interminable as they.”',
     "answer C":
       "“I should have made my way straight to you long  ago, / I should have blabb’d nothing but you, I should have chanted nothing / but you.”",
-    "answers D":
+    "answer D":
       "“I will leave all and come and make the hymns of you, / None has understood you, but I understand you.”",
     correct:
       "“You have not known what you are, you have slumber’d upon yourself / all your life, / Your eyelids have been the same as closed most of the time.”",
@@ -267,7 +267,7 @@ const testOne = {
       "Chambi’s photographs demonstrate a high level   of technical skill, as seen in his strategic use of   illumination to create dramatic light and shadow   contrasts.",
     "answer C":
       "During his lifetime, Chambi was known and   celebrated both within and outside his native   Peru, as his work was published in places like",
-    "answers D":
+    "answer D":
       "Argentina, Spain, and Mexico.   Some of the peoples and places Chambi   photographed had long been popular subjects   for Peruvian photographers.",
     correct:
       "Chambi took many commissioned portraits of  wealthy Peruvians, but he also produced  hundreds of images carefully documenting the  peoples, sites, and customs of Indigenous  communities of the Andes.",
@@ -291,7 +291,7 @@ const testOne = {
       "Edwin Carewe’s 47 credited acting roles includes only films made\n after 1934.",
     "answer C":
       "Lillian St. Cyr acted in far more than 66 films and Edwin Carewe directed more than 58. James Young",
-    "answers D": "Deer actually directed 33 films and acted in only 10.",
+    "answer D": "Deer actually directed 33 films and acted in only 10.",
     correct:
       "Lillian St. Cyr acted in far more than 66 films and Edwin Carewe directed more than 58. James Young",
     solutions:
@@ -314,7 +314,7 @@ const testOne = {
       "The species with the greatest number of juvenile plants growing in patches of vegetation was H. stoechas.",
     "answer C":
       "For T. libanitis and T. moroderi, the percentage of juvenile plants growing in patches of vegetation was less than what would be expected if plants were randomly distributed.",
-    "answers D":
+    "answer D":
       "For each species, the percentage of juvenile plants growing in\n patches of vegetation was substantially higher than what would be\n expected if plants were randomly distributed.",
     correct:
       "For each species, the percentage of juvenile plants growing in\n patches of vegetation was substantially higher than what would be\n expected if plants were randomly distributed.",
@@ -338,7 +338,7 @@ const testOne = {
       "Though B. tomentosa and B. macrantha both secrete citric and malic acids, each species produces the acids in different proportions.",
     "answer C":
       "the roots of B. tomentosa and B. macrantha carve new entry points into rocks even when cracks in the surface are readily available.",
-    "answers D":
+    "answer D":
       "B. tomentosa and B. macrantha thrive even when transferred to the surfaces of rocks that do not contain phosphates.",
     correct:
       "the roots of B. tomentosa and B. macrantha carve new entry points into rocks even when cracks in the surface are readily available.",
@@ -361,7 +361,7 @@ const testOne = {
       "the evolution of larger body sizes in sauropods\n did not depend on increased atmospheric carbon\n dioxide.",
     "answer C":
       "atmospheric carbon dioxide was higher when the\n largest known sauropods lived than it was when\n the first sauropods appeared.",
-    "answers D":
+    "answer D":
       "sauropods probably would not have evolved to\n such immense sizes if atmospheric carbon\n dioxide had been even slightly higher.",
     correct:
       "the evolution of larger body sizes in sauropods\n did not depend on increased atmospheric carbon\n dioxide.",
@@ -384,7 +384,7 @@ const testOne = {
       "help judges improve the arguments they put\n forward in their judicial opinions.",
     "answer C":
       "make judicial opinions more comprehensible to\n readers without legal or philosophical training.",
-    "answers D":
+    "answer D":
       "bring judicial opinions in line with views that are\n broadly held among philosophers.",
     correct:
       "help judges improve the arguments they put\n forward in their judicial opinions.",
@@ -405,7 +405,7 @@ const testOne = {
     "answer A": "they",
     "answer B": "one",
     "answer C": "you",
-    "answers D": "it",
+    "answer D": "it",
     correct: "they",
     solutions:
       "Choice A is the best answer. The convention being tested is pronoun-antecedent agreement. The plural pronoun “they” agrees in number with the plural antecedent “customers.”",
@@ -424,7 +424,7 @@ const testOne = {
     "answer A": "soul,” positing",
     "answer B": "soul”: positing",
     "answer C": "soul”; positing",
-    "answers D": "soul.” Positing",
+    "answer D": "soul.” Positing",
     correct: "soul,” positing",
     solutions:
       "Choice A is the best answer. The convention being tested is punctuation use between a main clause and a participial phrase. This choice correctly uses a comma to mark the boundary between the main clause (“Epicurus…‘soul’”) and the participial phrase (“positing…absence”) that provides additional information about how Epicurus defined pleasure.",
@@ -443,7 +443,7 @@ const testOne = {
     "answer A": "They’re",
     "answer B": "It’s",
     "answer C": "Their",
-    "answers D": "Its",
+    "answer D": "Its",
     correct: "Their",
     solutions:
       "Choice C is the best answer. The convention being tested is the use of possessive determiners. The plural possessive determiner “their” agrees in number with the plural conjoined noun phrase “Watson and Crick” and thus indicates that the findings were those of Watson and Crick.",
@@ -462,7 +462,7 @@ const testOne = {
     "answer A": "critic, Stina Chyn, claims",
     "answer B": "critic, Stina Chyn, claims,",
     "answer C": "critic Stina Chyn claims",
-    "answers D": "critic Stina Chyn, claims,",
+    "answer D": "critic Stina Chyn, claims,",
     correct: "critic Stina Chyn claims",
     solutions:
       "Choice C is the best answer. The conventions being tested are punctuation use between titles and proper nouns and between verbs and integrated quotations. No punctuation is needed to set off the proper noun “Stina Chyn” from the title that describes Chyn, “critic.” Because “Stina Chyn” is essential information identifying the “critic,” no punctuation is necessary. Further, no punctuation is needed between the verb “claims” and the following quotation because the quotation is integrated into the structure of the sentence.",
@@ -481,7 +481,7 @@ const testOne = {
     "answer A": "claiming",
     "answer B": "claim",
     "answer C": "having claimed",
-    "answers D": "to claim",
+    "answer D": "to claim",
     correct: "claim",
     solutions:
       "Choice B is the best answer. The convention being tested is the use of finite and nonfinite verb forms within a sentence. A main clause requires a finite verb to perform the action of the subject (in this case, “some historians”), and this choice supplies the finite present tense verb “claim” to indicate what some historians do",
@@ -500,7 +500,7 @@ const testOne = {
     "answer A": "food:",
     "answer B": "food,",
     "answer C": "food while",
-    "answers D": "food",
+    "answer D": "food",
     correct: "food:",
     solutions:
       "Choice A is the best answer. The convention being tested is colon use within a sentence. A colon used in this way introduces information that illustrates or explains information that has come before it. In this case, the colon introduces the following explanation of why some roundworms in the Southern Hemisphere move in the opposite direction of Earth’s magnetic field.",
@@ -519,7 +519,7 @@ const testOne = {
     "answer A": "it",
     "answer B": "themselves",
     "answer C": "them",
-    "answers D": "itself",
+    "answer D": "itself",
     correct: "themselves",
     solutions:
       "Choice B is the best answer. The convention being tested is pronoun-antecedent agreement. The plural reflexive pronoun “themselves” agrees in number with the plural antecedent “turtle barnacles,” correctly indicating what is attached to a sea turtle shell.",
@@ -538,7 +538,7 @@ const testOne = {
     "answer A": "allows",
     "answer B": "are allowing",
     "answer C": "have allowed",
-    "answers D": "allow",
+    "answer D": "allow",
     correct: "allows",
     solutions:
       "Choice A is the best answer. The convention being tested is subject–verb agreement. The singular verb “allows” agrees in number with the singular subject “landing.”",
@@ -557,7 +557,7 @@ const testOne = {
     "answer A": "equations, though:",
     "answer B": "equations, though,",
     "answer C": "equations. Though,",
-    "answers D": "equations though",
+    "answer D": "equations though",
     correct: "equations, though:",
     solutions:
       "Choice A is the best answer. The convention being tested is the use of punctuation to mark boundaries between supplements and clauses. The comma after “equations” is used to separate the independent clause (“Hopper’s… equation”) from the supplementary adverb phrase “though.” The colon after “though” is used to mark the boundary between the clause ending with “though” and the following clause (“as…age”). A colon used in this way introduces information that illustrates or explains information that has come before it. In this case, the colon after “though” introduces the following explanation of how Hopper’s subsequent career would involve more than just solving equations: she would become a pioneering computer programmer.",
@@ -576,7 +576,7 @@ const testOne = {
     "answer A": "Henry resumed his reign,",
     "answer B": "the reign of Henry resumed,",
     "answer C": "Henry’s reign resumed,",
-    "answers D": "it was Henry who resumed his reign,",
+    "answer D": "it was Henry who resumed his reign,",
     correct: "Henry resumed his reign,",
     solutions:
       "Choice A is the best answer. The convention being tested is subject-modifier placement. This choice ensures that the introductory phrase “upon recovering two years later” appears immediately before the noun it modifies (“Henry”), clearly establishing that Henry recovered two years later.",
@@ -595,7 +595,7 @@ const testOne = {
     "answer A": "by contrast,",
     "answer B": "consequently,",
     "answer C": "secondly,",
-    "answers D": "for example,",
+    "answer D": "for example,",
     correct: "it was Henry who resumed his reign,",
     solutions:
       "Choice D is the best answer. “For example” logically signals that the information in this sentence—that The Emperor’s Babe is a novel conveyed in lines of poetry—exemplifies the claim in the previous sentence about hybrid works that incorporate elements of both novels and poems.",
@@ -614,7 +614,7 @@ const testOne = {
     "answer A": "in other words,",
     "answer B": "for instance,",
     "answer C": "by contrast,",
-    "answers D": "accordingly,",
+    "answer D": "accordingly,",
     correct: "by contrast,",
     solutions:
       "Choice C is the best answer. “By contrast” logically signals that the information in this sentence—that dogs can see, hear, and smell by the end of two weeks— contrasts with the preceding information (that wolves can smell but not see or hear at the same age).",
@@ -633,7 +633,7 @@ const testOne = {
     "answer A": "Similarly,",
     "answer B": "For this reason,",
     "answer C": "Furthermore,",
-    "answers D": "Increasingly,",
+    "answer D": "Increasingly,",
     correct: "Increasingly,",
     solutions:
       "Choice D is the best answer. “Increasingly” logically signals that the claim in this sentence—that mathematicians are collaborating with their peers—marks a change relative to what was traditionally done. As the previous sentence explains, while mathematicians may have traditionally worked alone, evidence points to a shift in the opposite direction. The claim describes the shift: a rise in collaboration.",
@@ -655,7 +655,7 @@ const testOne = {
       "Pterosaur jawbones located in the Sahara Desert\n were the focus of a 2021 study.",
     "answer C":
       "In a 2021 study, Chinsamy-Turan used advanced\n microscope techniques to analyze the jawbones\n of pterosaurs, flying reptiles that existed millions\n of years ago.",
-    "answers D":
+    "answer D":
       "In a 2021 study, Chinsamy-Turan determined\n that pterosaur jawbones located in the Sahara\n Desert had few growth lines relative to the bones\n of fully grown pterosaurs and thus belonged to\n juveniles",
     correct:
       "In a 2021 study, Chinsamy-Turan determined\n that pterosaur jawbones located in the Sahara\n Desert had few growth lines relative to the bones\n of fully grown pterosaurs and thus belonged to\n juveniles",
@@ -679,7 +679,7 @@ const testOne = {
       "Hedgeman worked in politics and helped\n organize the march, while Bates was a journalist\n and school desegregation advocate.",
     "answer C":
       "Although Hedgeman worked behind the scenes\n to make sure a woman speaker was included,\n Bates was the sole woman to speak at the march.",
-    "answers D":
+    "answer D":
       "Many African American women, including Bates\n and Hedgeman, fought for civil rights, but only\n one spoke at the march.",
     correct:
       "Although Hedgeman worked behind the scenes\n to make sure a woman speaker was included,\n Bates was the sole woman to speak at the march.",
@@ -700,7 +700,7 @@ const testOne = {
     "answer A": "skeptical",
     "answer B": "observant",
     "answer C": "critical",
-    "answers D": "confident",
+    "answer D": "confident",
     correct: "observant",
     solutions:
       "Choice B is the best answer because it most logically completes the text’s discussion of Jacob Lawrence’s artistic process. In this context, “observant” means watchful and perceptive. The text emphasizes that the “close attention” Lawrence paid to “all the details” of his neighborhood allowed him to reflect subtle elements of “the beauty and vitality of the Black experience” in his artwork. This context indicates that being observant of his surroundings was an important part of Lawrence’s work as an artist.",
@@ -719,7 +719,7 @@ const testOne = {
     "answer A": "a disconcerting",
     "answer B": "an acceptable",
     "answer C": "an imperceptible",
-    "answers D": "a substantial",
+    "answer D": "a substantial",
     correct: "a substantial",
     solutions:
       "Choice D is the best answer because it most logically completes the text’s discussion of the research that Lopes-Ferreira and her colleagues are conducting on the stingray species Potamotrygon rex. As used in this context, “a substantial” effect means an effect that is sizable or noteworthy. The text indicates that the researchers are seeking to determine whether there are “considerable variations” in the potency of stingray venom that are associated with variation in the stingrays’ age and sex. This context suggests that the researchers want to find out whether stingray age and sex have a substantial effect on venom toxicity",
@@ -738,7 +738,7 @@ const testOne = {
     "answer A": "involuntarily",
     "answer B": "beneficially",
     "answer C": "strenuously",
-    "answers D": "smoothly",
+    "answer D": "smoothly",
     correct: "involuntarily",
     solutions:
       "Choice A is the best answer because it most logically completes the text’s discussion of diaphragm contractions and hiccups. In this context, “involuntarily” means done without any control, or by reflex. The text explains that when a person’s diaphragm repeatedly contracts and results in hiccups (which may be beneficial for infants), those muscle contractions are “uncontrollable.” This context indicates that the diaphragm contractions occur without the person’s control",
@@ -757,7 +757,7 @@ const testOne = {
     "answer A": "prevail",
     "answer B": "succumb",
     "answer C": "diverge",
-    "answers D": "intersect",
+    "answer D": "intersect",
     correct: "intersect",
     solutions:
       "Choice D is the best answer because it most logically completes the text’s discussion about the relationship between fine art and fashion. As used in this context, “intersect” means to connect or overlap. The text indicates that Jamie Okuma challenges the position held by critics because her work can be seen at an art museum and can be bought by the public from her online boutique. The text also presents the critics’ view as being influenced by a perception that fine artists create works that are “timeless” and meant for exhibition, whereas fashion designers periodically produce new styles that are meant for purchase. This context suggests that the critics believe that fine art and fashion tend not to overlap—in other words, that they rarely intersect.",
@@ -776,7 +776,7 @@ const testOne = {
     "answer A": "interjected",
     "answer B": "committed",
     "answer C": "illustrated",
-    "answers D": "prescribed",
+    "answer D": "prescribed",
     correct: "prescribed",
     solutions:
       "Choice D is the best answer because it most logically completes the text’s discussion of gender roles in Shakespeare’s comedies. As used in this context, “prescribed” would mean laid down as rules. The text indicates that the characters in the comedies often defy gender roles that are “socially dictated” (even if most characters do return to those roles eventually) and that scholars have been very interested in these acts of defiance. This context indicates that what the characters are rebelling against are standards of behavior prescribed by the society of the time.",
@@ -795,7 +795,7 @@ const testOne = {
     "answer A": "deceptive",
     "answer B": "innocuous",
     "answer C": "novel",
-    "answers D": "impractical",
+    "answer D": "impractical",
     correct: "innocuous",
     solutions:
       "Choice B is the best answer because it most logically completes the text’s discussion of Ward and colleagues’ findings. As used in this context, “innocuous” means mild or unharmful. The text describes the vibration and warming that Ward and colleagues used to alleviate itching as “harmless applications” and goes on to contrast these applications with another stimulus that actually offers more relief even though it seems to be stronger and “less benign.” This context conveys the idea that vibration and warming were innocuous stimuli.",
@@ -814,7 +814,7 @@ const testOne = {
     "answer A": "unobtrusive",
     "answer B": "concealed",
     "answer C": "approximate",
-    "answers D": "peripheral",
+    "answer D": "peripheral",
     correct: "peripheral",
     solutions:
       "Choice D is the best answer because it most logically completes the text’s discussion of the location of the province of Xoconochco within the Aztec Empire. As used in this context, “peripheral” means situated toward the outer bounds rather than the center. The text indicates that Xoconochco was located on a coast, hundreds of kilometers away from the capital of the Aztec Empire. The text also states that trade between the province and the capital required “a long overland journey.” This context suggests that Xoconochco was situated toward an edge of the empire’s territory rather than near its center.",
@@ -835,7 +835,7 @@ const testOne = {
       "To emphasize Jane’s loyalty to the people sheworks for at Thornfield Hall",
     "answer C":
       "To demonstrate that Jane finds her situationboth challenging and deeply fulfilling",
-    "answers D":
+    "answer D":
       "To describe Jane’s determination to secureemployment outside of Thornfield Hall",
     correct:
       "To convey a contrast between Jane’s outwardcalmness and internal restlessness",
@@ -859,7 +859,7 @@ const testOne = {
       "It is overly optimistic given additionalobservations from Srivastava and her team.",
     "answer C":
       "It is unexpected given that Srivastava and herteam’s findings were generally met withenthusiasm.",
-    "answers D":
+    "answer D":
       "It is unfairly dismissive given the progress thatSrivastava and her team have reported.",
     correct:
       "It is overly optimistic given additionalobservations from Srivastava and her team.",
@@ -882,7 +882,7 @@ const testOne = {
       "The speaker is planning an upcoming trip to thefriend’s house.",
     "answer C":
       "The speaker is too fatigued to continue adiscussion with the friend.",
-    "answers D":
+    "answer D":
       "The speaker is thinking about the friend insteadof immediately falling asleep.",
     correct:
       "The speaker is thinking about the friend insteadof immediately falling asleep.",
@@ -906,7 +906,7 @@ const testOne = {
       "He indicates a desire to speak to the crowd, eventhough the crowd has asked to speak to theSub-Warden.",
     "answer C":
       "He expresses sympathy for the crowd’s demands,even though the crowd’s shouting annoys him.",
-    "answers D":
+    "answer D":
       "He describes the crowd as being united, eventhough the crowd clearly appears otherwise.",
     correct:
       "He describes the crowd as being united, eventhough the crowd clearly appears otherwise.",
@@ -930,7 +930,7 @@ const testOne = {
       "“Alexandra talked to the men about their cropsand to the women about their poultry. She spenta whole day with one young farmer who hadbeen away at school, and who was experimentingwith a new kind of clover hay. She learned agreat deal.”",
     "answer C":
       "“Alexandra drove off alone. The rattle of herwagon was lost in the howling of the wind, buther lantern, held firmly between her feet, made amoving point of light along the highway, goingdeeper and deeper into the dark country.”",
-    "answers D":
+    "answer D":
       "“It was Alexandra who read the papers andfollowed the markets, and who learned by themistakes of their neighbors. It was Alexandrawho could always tell about what it had cost tofatten each steer, and who could guess the weightof a hog before it went on the scales closer thanJohn Bergson [her father] himself.”",
     correct:
       "“She had never known before how much thecountry meant to her. The chirping of the insectsdown in the long grass had been like the sweetestmusic. She had felt as if her heart were hidingdown there, somewhere, with the quail and theplover and all the little wild things that croonedor buzzed in the sun. Under the long shaggyridges, she felt the future stirring.”",
@@ -954,7 +954,7 @@ const testOne = {
       "Vietnamese conveys information atapproximately the same rate as Spanish despitebeing spoken at a slower rate.",
     "answer C":
       "Among the five languages in the table, thelanguage that is spoken the fastest is also thelanguage that conveys information the fastest.",
-    "answers D":
+    "answer D":
       "Serbian and Spanish are spoken at approximatelythe same rate, but Serbian conveys informationfaster than Spanish does.",
     correct:
       "Vietnamese conveys information atapproximately the same rate as Spanish despitebeing spoken at a slower rate.",
@@ -978,7 +978,7 @@ const testOne = {
       "Participants who helped the experimenter pickup the pens used a greater number of positivewords to describe the trees and the building in apostexperiment survey than did participants whodid not help the experimenter.",
     "answer C":
       "Participants who did not help the experimenterpick up the pens were significantly more likely toreport having experienced a feeling of awe,regardless of whether they looked at the buildingor the trees.",
-    "answers D":
+    "answer D":
       "Participants who had been looking at thebuilding were significantly more likely to noticethat the experimenter had dropped the pens thanwere participants who had been looking at thetrees.",
     correct:
       "Participants who had been looking at the treeshelped the experimenter pick up significantlymore pens than did participants who had beenlooking at the building.",
@@ -999,11 +999,214 @@ const testOne = {
     "answer A": "1900 with the employment by sector in 1950.",
     "answer B": "1800 with the employment by sector in 2012.",
     "answer C": "1900 with the employment by sector in 2012.",
-    "answers D": "1800 with the employment by sector in 1900.",
+    "answer D": "1800 with the employment by sector in 1900.",
     correct: "1900 with the employment by sector in 1950.",
     solutions:
       "Choice A is the best answer because it presents data from the table that most effectively complete the statement about the rates at which employment shifted in France and the United States. The text states that over the last two hundred years employment in the agricultural sector has declined while employment in the service sector has risen in both France and the US, and the data from the table reflect these trends. The text asserts, however, that the transition from agriculture to services “happened at very different rates in the two countries.” This assertion is best supported by a comparison of data from 1900 and 1950: the table shows that in those years, employment in agriculture went from 43% to 32% in France (a decline of 11 percentage points) and from 41% to 14% in the US (a decline of 27 percentage points), and that employment in services went from 28% to 35% in France (an increase of 7 percentage points) and from 31% to 53% in the US (an increase of 22 percentage points). In other words, the rate of change was greater in the US than in France for both sectors",
     "3 tags": "Data Reasoning (Graph and Charts), verbal",
+    difficulty: "1",
+    "done check": "N",
+    "correct last try": "N",
+    imagefield: "None",
+    "correct first": "N",
+  },
+  49: {
+    "passage field":
+      "Many archaeologists will tell you that categorizing excavated fragments of pottery by style, period, and what objects they belong to relies not only on standard criteria, but also on instinct developed over years of practice. In a recent study, however, researchers trained a deep-learning computer model on thousands of images of pottery fragments and found that it could categorize them as accurately as a team of expert archaeologists. Some archaeologists have expressed concern that they might be replaced by such computer models, but the researchers claim that outcome is highly unlikely.",
+    question:
+      "Which finding, if true, would most directly support the researchers’ claim?",
+    "answer A":
+      "In the researchers’ study, the model was able tocategorize the pottery fragments much morequickly than the archaeologists could.",
+    "answer B":
+      "In the researchers’ study, neither the model northe archaeologists were able to accuratelycategorize all the pottery fragments that werepresented.",
+    "answer C":
+      "A survey of archaeologists showed thatcategorizing pottery fragments limits the amountof time they can dedicate to other importanttasks that only human experts can do.",
+    "answer D":
+      "A survey of archaeologists showed that few ofthem received dedicated training in how toproperly categorize pottery fragments.",
+    correct:
+      "A survey of archaeologists showed thatcategorizing pottery fragments limits the amountof time they can dedicate to other importanttasks that only human experts can do.",
+    solutions:
+      "Choice C is the best answer because it presents a finding that, if true, would support the researchers’ claim that archaeologists are unlikely to be replaced by certain computer models. The text explains that although archaeologists hold that categorizing pottery fragments relies on both objective criteria and instinct developed through direct experience, researchers have found that a computer model can categorize the fragments with the same degree of accuracy as the humans can—a finding that has caused some archaeologists to worry that their own work won’t be needed any longer. If survey results indicate that categorizing pottery fragments limits the amount of time archaeologists can dedicate to other important tasks that only human experts can do, that would mean that computer models aren’t able to do all of the important things archaeologists do, thus supporting the researchers’ claim that computer models are unlikely to replace human archaeologists.",
+    "3 tags": "Development (Support), verbal",
+    difficulty: "2",
+    "done check": "N",
+    "correct last try": "N",
+    imagefield: "None",
+    "correct first": "N",
+  },
+  50: {
+    "passage field":
+      "Although military veterans make up a small proportion of the total population of the United States, they occupy a significantly higher proportion of the jobs in the civilian government. One possible explanation for this disproportionate representation is that military service familiarizes people with certain organizational structures that are also reflected in the civilian government bureaucracy, and this familiarity thus _______",
+    question: "Which choice most logically completes the text?",
+    "answer A":
+      "makes civilian government jobs especiallyappealing to military veterans.",
+    "answer B":
+      "alters the typical relationship between militaryservice and subsequent career preferences.",
+    "answer C":
+      "encourages nonveterans applying for civiliangovernment jobs to consider military serviceinstead.",
+    "answer D":
+      "increases the number of civilian government jobsthat require some amount of military experienceto perform.",
+    correct:
+      "makes civilian government jobs especiallyappealing to military veterans.",
+    solutions:
+      "Choice A is the best answer because it presents the conclusion that most logically follows from the text’s discussion of military veterans working in civilian government jobs in the United States. The text indicates that the proportion of military veterans working in civilian government jobs is considerably higher than the proportion of military veterans in the population as a whole. The text also notes that the unusually high representation of military veterans in these jobs may be a result of the organizational structures shared by civilian government entities and the military. Hence, it’s reasonable to infer that it’s the familiarity of the structures of civilian government that makes jobs there particularly attractive to military veterans.",
+    "3 tags": "Development (Logic), verbal",
+    difficulty: "1",
+    "done check": "N",
+    "correct last try": "N",
+    imagefield: "None",
+    "correct first": "N",
+  },
+  51: {
+    "passage field":
+      "Birds of many species ingest foods containing carotenoids, pigmented molecules that are converted into feather coloration. Coloration tends to be especially saturated in male birds’ feathers, and because carotenoids also confer health benefits, the deeply saturated colors generally serve to communicate what is known as an honest signal of a bird’s overall fitness to potential mates. However, ornithologist Allison J. Shultz and others have found that males in several species of the tanager genus Ramphocelus use microstructures in their feathers to manipulate light, creating the appearance of deeper saturation without the birds necessarily having to maintain a carotenoid-rich diet. These findings suggest that _______",
+    question: "Which choice most logically completes the text?",
+    "answer A":
+      "individual male tanagers can engage in honestsignaling without relying on carotenoidconsumption.",
+    "answer B":
+      "feather microstructures may be less effectivethan deeply saturated feathers for signalingoverall fitness.",
+    "answer C":
+      "scientists have yet to determine why tanagers\nhave a preference for mates with colorful\nappearances.",
+    "answer D":
+      "a male tanager’s appearance may function asa dishonest signal of the individual’s overallfitness.",
+    correct:
+      "a male tanager’s appearance may function asa dishonest signal of the individual’s overallfitness.",
+    solutions:
+      "Choice D is the best answer because it most logically completes the text’s discussion of Shultz’s finding about male tanagers. The text explains that because carotenoids both contribute to deeply saturated feathers and offer health benefits, having deeply saturated feathers is usually “an honest signal” (a true indication) that a bird is generally fit. However, Shultz and others have found that certain male tanagers can appear to have deeply saturated feathers even if they haven’t consumed a diet rich in carotenoids, thanks to microstructures in their feathers that manipulate light. If those birds aren’t necessarily eating carotenoid-rich diets, they may actually be less fit than other birds that appear to have similarly saturated feathers; this suggests that a male tanager’s appearance may function as a dishonest signal, or a false indication, of the bird’s overall fitness.",
+    "3 tags": "Development (Logic), verbal",
+    difficulty: "1",
+    "done check": "N",
+    "correct last try": "N",
+    imagefield: "None",
+    "correct first": "N",
+  },
+  52: {
+    "passage field":
+      "When writing The Other Black Girl (2021), novelist Zakiya Dalila Harris drew on her own experiences working at a publishing office. The award-winning book is Harris’s first novel, but her writing _______ honored before. At the age of twelve, she entered a contest to have a story published in American Girl magazine—and won.",
+    question:
+      "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    "answer A": "were",
+    "answer B": "have been",
+    "answer C": "has been",
+    "answer D": "are",
+    correct: "has been",
+    solutions:
+      "Choice C is the best answer. The convention being tested is subject-verb agreement. The singular verb “has been” agrees in number with the singular subject “writing.”",
+    "3 tags": "Standard English Conventions (Grammar), verbal",
+    difficulty: "1",
+    "done check": "N",
+    "correct last try": "N",
+    imagefield: "None",
+    "correct first": "N",
+  },
+  53: {
+    "passage field":
+      "The Alvarez theory, developed in 1980 by physicist Luis Walter Alvarez and his geologist son Walter Alvarez, maintained that the secondary effects of an asteroid impact caused many dinosaurs and other animals to die _______ it left unexplored the question of whether unrelated volcanic activity might have also contributed to the mass extinctions.",
+    question:
+      "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    "answer A": "out but",
+    "answer B": "out, but",
+    "answer C": "out",
+    "answer D": "out,",
+    correct: "out, but",
+    solutions:
+      "Choice B is the best answer. The convention being tested is the coordination of main clauses within a sentence. This choice correctly uses a comma and the coordinating conjunction “but” to join the first main clause (“the Alvarez…out”) and the second main clause (“it left … extinctions”). Choice A is incorrect because when coordinatin",
+    "3 tags": "Standard English Conventions (Grammar), verbal",
+    difficulty: "1",
+    "done check": "N",
+    "correct last try": "N",
+    imagefield: "None",
+    "correct first": "N",
+  },
+  54: {
+    "passage field":
+      "In winter, the diets of Japanese macaques, also known as snow monkeys, are influenced more by food availability than by food preference. Although the monkeys prefer to eat vegetation and land-dwelling invertebrates, those food sources may become unavailable because of extensive snow and ice cover, _______ the monkeys to hunt for marine animals in any streams that have not frozen over.",
+    question:
+      "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    "answer A": "forces",
+    "answer B": "to force",
+    "answer C": "forcing",
+    "answer D": "forced",
+    correct: "forcing",
+    solutions:
+      "Choice C is the best answer. The convention being tested is the use of finite and nonfinite verb forms within a sentence. The nonfinite present participle “forcing” is correctly used to form a participial phrase that supplements the main clause “those...cover,” describing the effects on monkeys of the lack of food sources.",
+    "3 tags": "Standard English Conventions (Grammar), verbal",
+    difficulty: "1",
+    "done check": "N",
+    "correct last try": "N",
+    imagefield: "None",
+    "correct first": "N",
+  },
+  55: {
+    "passage field":
+      "In his 1963 exhibition Exposition of Music— Electronic Television, Korean American artist Nam June Paik showed how television images could be manipulated to express an artist’s perspective. Today, Paik _______ considered the first video artist.",
+    question:
+      "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    "answer A": "could the blueberries thrive.",
+    "answer B": "the blueberries could thrive.",
+    "answer C": "the blueberries could thrive?",
+    "answer D": "could the blueberries thrive?",
+    correct: "could the blueberries thrive?",
+    solutions:
+      "Choice D is the best answer. The convention being tested is end-of-sentence punctuation. This choice correctly uses a question mark to punctuate the interrogative clause “could the blueberries thrive,” which asks a direct question at the end of the sentence.",
+    "3 tags": "Standard English Conventions (Grammar), verbal",
+    difficulty: "1",
+    "done check": "N",
+    "correct last try": "N",
+    imagefield: "None",
+    "correct first": "N",
+  },
+  56: {
+    "passage field":
+      "Lucía Michel of the University of Chile observed that alkaline soils contain an insoluble form of iron that blueberry plants cannot absorb, thus inhibiting blueberry growth. If these plants were grown in alkaline soil alongside grasses that aid in iron solubilization, _______ Michel was determined to find out.",
+    question:
+      "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    "answer A": "will be",
+    "answer B": "had been",
+    "answer C": "was",
+    "answer D": "is",
+    correct: "is",
+    solutions:
+      "Choice D is the best answer. The convention being tested is the use of verbs to express tense. In this choice, the present tense verb “is,” used in conjunction with the word “today,” correctly indicates that Paik is currently considered the first video artist",
+    "3 tags": "Standard English Conventions (Grammar), verbal",
+    difficulty: "1",
+    "done check": "N",
+    "correct last try": "N",
+    imagefield: "None",
+    "correct first": "N",
+  },
+  57: {
+    "passage field":
+      "The first computerized spreadsheet, Dan Bricklin’s VisiCalc, improved financial recordkeeping not only by providing users with an easy means of adjusting data in spreadsheets but also by automatically updating all calculations that were dependent on these _______ to VisiCalc’s release, changing a paper spreadsheet often required redoing the entire sheet by hand, a process that could take days.",
+    question:
+      "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    "answer A": "adjustments prior",
+    "answer B": "adjustments, prior",
+    "answer C": "adjustments. Prior",
+    "answer D": "adjustments and prior",
+    correct: "adjustments. Prior",
+    solutions:
+      "Choice C is the best answer. The convention being tested is punctuation use between sentences. In this choice, the period is used correctly to mark the boundary between the first sentence (“The...adjustments”) and the second sentence (“Prior...days”). Because the adverbial phrase beginning with “prior” indicates when changing a spreadsheet required redoing the sheet by hand, that phrase belongs with the second sentence.",
+    "3 tags": "Standard English Conventions (Grammar), verbal",
+    difficulty: "1",
+    "done check": "N",
+    "correct last try": "N",
+    imagefield: "None",
+    "correct first": "N",
+  },
+  58: {
+    "passage field":
+      "In order to prevent nonnative fish species from moving freely between the Mediterranean and Red Seas, marine biologist Bella Galil has proposed that a saline lock system be installed along the Suez Canal in Egypt’s Great Bitter Lakes. The lock would increase the salinity of the lakes and _______ a natural barrier of water most marine creatures would be unable to cross.",
+    question:
+      "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    "answer A": "creates",
+    "answer B": "create",
+    "answer C": "creating",
+    "answer D": "created",
+    correct: "create",
+    solutions:
+      "Choice B is the best answer. The convention being tested is the use of finite and nonfinite verb forms within a sentence. The modal “would,” which indicates the future from a perspective in the past, should be accompanied by a nonfinite base form verb. In this choice, the nonfinite base form verb “create” is used correctly in conjunction with the nonfinite base form verb “increase” to describe what the lock would do.",
+    "3 tags": "Standard English Conventions (Grammar), verbal",
     difficulty: "1",
     "done check": "N",
     "correct last try": "N",
