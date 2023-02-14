@@ -128,28 +128,26 @@
                 p.setAttribute("id", `a${i}`);
                 p.setAttribute("onclick", `addQ(${[i]})`);
                 p.setAttribute("data-box", i);
-                p.textContent = `${i}. ${testOne[i]["passage field"]}`;
+                p.textContent = `${i}. ${testOne[i]["passage field"]}  `;
 
                 let pointer = document.createElement("i");
                 // pointer.textContent = i
 
 
 
-                pointer.classList = "bi bi-geo-alt-fill text-dark d-none pointer";
+                pointer.classList = "bi bi-geo-alt-fill  pointer text-danger";
                 pointer.setAttribute("id", `pointer${i}`);
                 pointer.setAttribute("data-icon", i);
-
-
+                pointer.textContent = `${i}. ${testOne[i]["correct"]}`;
                 p.appendChild(pointer);
 
-                let marker = document.createElement("i");
+                // let marker = document.createElement("i");
+                // marker.classList = "bi bi-bookmark-fill text-danger fw-light booker ";
+                // marker.setAttribute("id", `marker${i}`);
+                // marker.setAttribute("data-markno", i);
+                // marker.style = "font-size: .6em;  ";
 
-                marker.classList = "bi bi-bookmark-fill text-danger fw-light booker d-none";
-                marker.setAttribute("id", `marker${i}`);
-                marker.setAttribute("data-markno", i);
-                marker.style = "font-size: .6em;  ";
-
-                p.appendChild(marker);
+                // p.appendChild(marker);
 
                 parent.appendChild(p);
             }
