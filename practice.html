@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>evo-ai</title>
+    <link rel="shortcut icon" type="image/png"
+        href="https://i.postimg.cc/TwPQwwDF/204-2049751-network-icon-red-network-icon-png.png" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <style>
+        .ci {
+            display: none;
+        }
+
+        @media (min-width: 993px) {
+            .ci {
+                display: block;
+            }
+        }
+
+        .imgs {
+            display: none;
+        }
+
+        @media (max-width: 992px) {
+            .imgs {
+                display: inline;
+            }
+        }
+
+        .singapore {
+            background-color: #FF9F00;
+        }
+
+        .darktrans {
+
+            background-color: rgba(0, 0, 0, 0.8)'
+
+        }
+
+        .iconsize {
+            font-size: 4em;
+            color: #0f5dac
+        }
+
+        .iconmobile {
+
+            color: rgb(197, 8, 8)
+        }
+    </style>
+</head>
+
+<body class="d-flex flex-column min-vh-100  bg-light">
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/index.html"><img
+                    src="https://i.postimg.cc/TwPQwwDF/204-2049751-network-icon-red-network-icon-png.png"
+                    style="max-width: 30px; width: 100%" />
+                &nbsp;dojolex.com</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/dojolex.html">SAT</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/review.html">review</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/results.html">results</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/analysis.html">analysis</a>
+                    </li>
+                </ul>
+                <div class="text-secondary text-end mb-0 mt-0" id="userInfo">
+                    <a href="/flash.html" class="text-decoration-none text-muted"><i
+                            class="bi bi-clipboard-data"></i></a>
+                    <a href="/index.html"><i class="bi bi-shield-check text-success"></i></a>
+                    <i class="bi bi-person-circle"></i> supercat
+                    <script id="user_id" type="application/json">
+              1
+            </script>
+                    <a href=""><i class="bi bi-power text-danger"></i></a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <p class="ms-3">Next Test - Mar 11 2023: <span class="text-danger" id="demo">00:00:00</span></p>
+
+    <div class="container my-3">
+        <div class="row">
+            <div class="col   py-2">
+                <canvas id="myChart"></canvas>
+
+            </div>
+            <div class="col d-flex flex-column">
+                <h3 class="text-primary my-2">Student Statistics</h3>
+                <li>Sets Practiced : 434</li>
+                <li>Questions Practiced : 434</li>
+                <li>Words Studied: 300</li>
+                <li>Status: Super Student</li>
+                <li>Grade: 9</li>
+                <br>
+                <div class="btn-group d-flex justify-content-center" role="group"
+                    aria-label="Basic checkbox toggle button group">
+                    <input type="checkbox" class="btn-check" id="btncheck1" autocomplete="off">
+                    <label class="btn btn-outline-primary" for="btncheck1">Vocab</label>
+
+                    <input type="checkbox" class="btn-check" id="btncheck2" autocomplete="off">
+                    <label class="btn btn-outline-primary" for="btncheck2">Reading</label>
+
+                    <input type="checkbox" class="btn-check" id="btncheck3" autocomplete="off">
+                    <label class="btn btn-outline-primary" for="btncheck3">Writing</label>
+
+
+                </div>
+                <a href="/evoomr.html" class="w-100 btn btn-outline-primary mt-auto mb-2">A.I. Engine Recommended
+                    Practice</a>
+
+
+            </div>
+
+        </div>
+
+
+
+
+        <br>
+
+    </div>
+
+
+    <footer class="footer mt-auto py-3 border-top border-secondary" style="background-color: rgba(0,0,0,255);">
+        <div class="container text-center"><small>
+                <span> <a href="/grammarAnalysis.html" class="text-light text-decoration-none">&copy;
+                        G-Ai</a>&nbsp;<a href="/claw.html" class="text-light text-decoration-none">&copy;
+                        Claw</a>
+                </span></small>
+        </div>
+        <div class="container text-center"><small>
+                <span> <a href="https://www.evolution3w.com" class="text-muted text-decoration-none">Developed &
+                        Managed
+                        by Evo-AI.com</a>
+                </span></small>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script>
+        const ctx = document.getElementById("myChart").getContext("2d");
+        const myChart = new Chart(ctx, {
+            type: "radar",
+            data: {
+                labels: [
+                    "Idiom",
+                    "Grammar",
+                    "Diction",
+                    "Specialization",
+                    "Redundancy",
+                    "Structure",
+                ],
+                datasets: [
+                    {
+                        label: "Student Radar",
+                        data: [78, 48, 49, 99, 96, 99],
+                        fill: true,
+                        backgroundColor: "rgba(54, 162, 235, 0.2)",
+                        borderColor: "rgb(54, 162, 235)",
+                        pointBackgroundColor: "rgb(54, 162, 235)",
+                        pointBorderColor: "#fff",
+                        pointHoverBackgroundColor: "#fff",
+                        pointHoverBorderColor: "rgb(54, 162, 235)",
+                    },
+                ],
+            },
+            options: {
+                scales: {
+                    r: {
+                        grid: {
+                            color: "rgb(56,56,56)",
+                        },
+                        min: 0,
+                        max: 100,
+                    },
+                },
+            },
+        });
+
+
+
+    </script>
+    <script>
+        // Set the date we're counting down to
+        var countDownDate = new Date("Mar 11, 2023 08:00:00").getTime();
+
+        // Update the count down every 1 second
+        var x = setInterval(function () {
+
+            // Get today's date and time
+            var now = new Date().getTime();
+
+            // Find the distance between now and the count down date
+
+
+            var distance = countDownDate - now;
+
+
+
+            // Time calculations for days, hours, minutes and seconds
+            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+
+            if (hours < 10) {
+                hours = "0" + hours
+            }
+            if (minutes < 10) {
+                minutes = "0" + minutes
+            }
+            if (seconds < 10) {
+                seconds = "0" + seconds
+            }
+
+            // Display the result in the element with id="demo"
+            document.getElementById("demo").innerHTML = days + "d " + hours + "h "
+                + minutes + "m " + seconds + "s";
+
+
+            // If the count down is finished, write some text
+            if (distance < 0) {
+                clearInterval(x);
+                document.getElementById("demo").innerHTML = "TIME'S UP";
+            }
+        }, 1000);
+    </script>
+
+
+</body>
+
+</html>
