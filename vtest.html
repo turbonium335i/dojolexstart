@@ -31,7 +31,6 @@
             }
             return cookieValue;
         }
-
         const csrftoken = getToken('csrftoken');
         function getCookie(name) {
             var cookieArr = document.cookie.split(";");
@@ -43,19 +42,11 @@
             }
             return null;
         }
-
-
-
-
     </script>
-
 </head>
 
 <body class="bg-dark text-light d-flex flex-column min-vh-100">
-
     <div class="container" id="mainDiv">
-
-
         <h4 id="testName" class="text-center text-warning  mt-5">Dojolex Proficieny Test </h4>
         <br>
         <div class="d-flex justify-content-start   pe-4 mb-3">
@@ -63,16 +54,12 @@
                 <span class="text-light"> Directions &nbsp;
                 </span>
             </h3>
-
         </div>
         <div class="progress bg-dark" style="height: 2px;">
             <div class="progress-bar bg-success" role="progressbar" style="width: 1%;" aria-valuenow="25"
                 aria-valuemin="0" aria-valuemax="100"></div>
         </div>
-
         <br>
-
-
         <div class="ms-3">
             <p>
                 The questions in this section address a number of important reading and writing skills. Each question
@@ -81,10 +68,7 @@
                 the
                 best answer
                 to the question based on the text(s).
-
-
             </p>
-
             <p> All questions in this section are multiple-choice with four answer choices. Each question has a single
                 best
                 answer.
@@ -100,37 +84,23 @@
                 power cord
             </li>
         </div>
-
         <div class="text-center py-5" id="linkDiv">
-
             <button class="btn btn-secondary btn-lg d-none" id="startBtn" onclick="hideMainDiv()">Start Test <i
                     class="bi bi-arrow-right-circle"></i></button>
         </div>
-
-
         <br>
-
-
         <div id="jsData" class="text-success"></div>
-
     </div>
-
     <div class="container px-lg-5  d-none" id="testDiv">
         <div class="text-center m-3">
             <h5 class="text-light">Verification Test / Correct: <span class="text-success" id="noCorrect">0</span></h5>
         </div>
         <div class="d-flex justify-content-end ">
-
             <span class="text-light" onclick="timerFunction()" style="cursor: pointer;">
                 <i class="bi bi-clock-history text-danger timerOn" id="timer"></i> &nbsp;
             </span>
-
             <span id="demo">00h 00m 00s </span>
         </div>
-
-
-
-
         <div class="progress bg-secondary" style="height: 2px;">
             <div class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="25" aria-valuemin="0"
                 aria-valuemax="100"></div>
@@ -155,14 +125,11 @@
         <div class="container d-none" id="solution"></div>
     </div>
     <div id="grammarbox" class="container my-5">gbox</div>
-
     <!-- add d-none to result box below -->
     <div id="resultbox" class="container my-5 d-none ">
-
         <div class="text-warning h2 text-center mb-5" id="resultBox">
         </div>
         <br>
-
         General English Proficieny
         <div class="progress bg-dark border border-success mb-3 rounded-0 mt-1" style="height: 50px;">
             <div class="progress-bar bg-success" role="progressbar" style="width: 0%;" aria-valuenow="25"
@@ -190,12 +157,8 @@
                 Home
             </a>
         </div>
-
     </div>
     <div class="d-grid gap-2 col-6 mx-auto mb-5"> <a href="/index.html" class="btn btn-outline-primary  ">Index</a>
-
-
-
         <script>
             var progressPercentage = 0;
             var x = setInterval(function () {
@@ -207,30 +170,25 @@
                     clearInterval(x);
                 }
             }, 100);
-
             // setTimeout(function () {
             //   document
             //     .getElementsByClassName("progress-bar")[0]
             //     .setAttribute("style", "width:" + 100 + "%");
-
             //   document.getElementById("jsData").innerHTML = "Test is ready. Good Luck!";
             //   document
             //     .getElementById("startBtn")
             //     .classList.remove("d-none", "btn-secondary");
             //   document.getElementById("startBtn").classList.add("btn-outline-warning");
             // }, 2000);
-
             function hideMainDiv() {
                 document.getElementById("mainDiv").classList.add("d-none");
                 document.getElementById("testDiv").classList.remove("d-none");
                 startime();
                 lvlsend(1, "started");
             }
-
             var myVar;
             var timeLeft = 901000;
             var countDownDate;
-
             function startTimer() {
                 var now = new Date().getTime();
                 var distance = countDownDate - now;
@@ -260,16 +218,13 @@
                 // localStorage.setItem('timeLeft', JSON.stringify(timeLeft));
                 // console.log(localStorage.getItem('timeLeft'))
             }
-
             function startime() {
                 myVar = setInterval(startTimer, 1000);
                 countDownDate = Date.now() + timeLeft;
             }
-
             function timerFunction() {
                 var timer = document.getElementById("timer");
                 var demo = document.getElementById("demo");
-
                 if (timer.classList.contains("timerOn")) {
                     demo.style.display = "none";
                     timer.classList.remove("timerOn");
@@ -278,7 +233,6 @@
                     timer.classList.add("timerOn");
                 }
             }
-
             function lvlsend(productId, action) {
                 console.log("updateStar Fired");
                 var url = "/lvltest";
@@ -297,7 +251,6 @@
                         console.log("data:", data);
                     });
             }
-
             var apiJson = [];
             var grammarApi = ["api empty"];
             var grammarOutput = [];
@@ -312,13 +265,10 @@
             //     document.getElementById("grammarbox").appendChild(node);
             //   }
             // }
-
             //////////////////////////////// confirm eligibility to take the test from django side
-
             var apiGrammar = [];
             var apiContext = [];
             var apiIdiom = [];
-
             function getGrammar() {
                 fetch("https://pertinacity1.pythonanywhere.com/grammarapi")
                     .then((resp) => resp.json())
@@ -327,16 +277,13 @@
                         grammarApi = data;
                         apiJson = data;
                         datalen = data.length;
-
                         // for (let i = 0; i < apiJson.length; i++) {
                         //   console.log(apiJson[i].correct);
                         // }
-
                         // grammarApi.forEach(myFunction);
                         //   var randData = apiJson[Math.floor(Math.random() * apiJson.length)];
                         //   var rArray = [...Array(datalen).keys()];
                         // console.log(rArray.length)
-
                         for (let i = 0; i < datalen; i++) {
                             if (apiJson[i].qtype == "Grammar") {
                                 apiGrammar.push(apiJson[i]);
@@ -346,30 +293,23 @@
                                 apiIdiom.push(apiJson[i]);
                             }
                         }
-
                         document.getElementById("grammarbox").innerHTML = "Server Connection: Success.";
-
                         function getRanArr(lngth) {
                             let arr = [];
                             do {
                                 let ran = Math.floor(Math.random() * lngth);
                                 arr = arr.indexOf(ran) > -1 ? arr : arr.concat(ran);
                             } while (arr.length < lngth);
-
                             return arr;
                         }
-
                         const res = getRanArr(20);
                         // var randomnumbers = res.slice(0, 10);
                         var randomnumbers = res;
-
                         var idiomLen = 0;
                         var contenxtLen = 0;
                         var grammarLen = 0;
-
                         for (let i = 0; i < randomnumbers.length; i++) {
                             var rn = randomnumbers[i];
-
                             if (grammarLen < 10) {
                                 levelTestSet.push(apiGrammar[rn]);
                                 grammarLen += 1;
@@ -386,15 +326,12 @@
                                 break;
                             }
                         }
-
                         apiJson = levelTestSet.sort(() => Math.random() - 0.5);
                         // console.log(apiJson);
-
                         // for (let i = 0; i < apiJson.length; i++) {
                         //   console.log(i, apiJson[i].qtype);
                         // }
                         updateQuestion();
-
                         // document
                         //   .getElementsByClassName("progress-bar")[0]
                         //   .setAttribute("style", "width:" + 100 + "%");
@@ -409,33 +346,27 @@
                     });
             }
             getGrammar();
-
             // get range of numbers javascript & loop
             // var rArray = ([...Array(60).keys()])
             // for (let i = 0; i < rArray.length; i++) {
             //     console.log(i)
             // }
-
             var s = document.getElementById("solution");
             var a = document.getElementById("a");
             var b = document.getElementById("b");
             var c = document.getElementById("c");
             var d = document.getElementById("d");
-
             var qtype = [];
-
             // var qtype = ["a", "b", "c", "b", "a", "b", "c", "a", "a", "a"];
             // function qtypeCount(array) {
             //   var typeCount = {};
             //   array.forEach((val) => (typeCount[val] = (typeCount[val] || 0) + 1));
             //   return typeCount;
             // }
-
             // var wrongCount = qtypeCount(qtype);
             // for (const [key, value] of Object.entries(wrongCount)) {
             //   console.log(key, value);
             // }
-
             function showResults() {
                 function qtypeCount(array) {
                     var typeCount = {};
@@ -447,12 +378,9 @@
                 var qtypeGrammar = qtypeResult["Grammar"] * 10;
                 var qtypeContext = qtypeResult["Context"] * 20;
                 var qtypeIdiom = qtypeResult["Idiom"] * 20;
-
                 document.getElementById("testDiv").classList.add("d-none");
                 document.getElementById("resultbox").classList.remove("d-none");
-
                 var percentCorrectBar = correctCount.length * 5;
-
                 if (percentCorrectBar > 40) {
                     document
                         .getElementsByClassName("progress-bar")[2]
@@ -462,26 +390,19 @@
                     document.getElementById(
                         "resultBox"
                     ).innerHTML = `Results : <span class="text-success" >Proficieny PASSED!</span>`;
-
                     //subscore bar
                     document
                         .getElementsByClassName("progress-bar")[3]
                         .setAttribute("style", "width:" + qtypeGrammar + "%");
-
                     document.getElementById("grammarResult").innerHTML = qtypeGrammar + "%";
-
                     document
                         .getElementsByClassName("progress-bar")[4]
                         .setAttribute("style", "width:" + qtypeContext + "%");
-
                     document.getElementById("contextResult").innerHTML = qtypeContext + "%";
-
                     document
                         .getElementsByClassName("progress-bar")[5]
                         .setAttribute("style", "width:" + qtypeIdiom + "%");
-
                     document.getElementById("idiomResult").innerHTML = qtypeIdiom + "%";
-
                     fetti();
                     //   console.log("fetti fired");
                     // setTimeout(function () { window.location.href = 'https://wavecafe.pythonanywhere.com/' }, 6000);
@@ -490,63 +411,49 @@
                     document
                         .getElementsByClassName("progress-bar")[2]
                         .classList.add("bg-danger");
-
                     document
                         .getElementsByClassName("progress-bar")[2]
                         .setAttribute("style", "width:" + percentCorrectBar + "%");
-
                     document.getElementById("resultpercentagetext").innerHTML =
                         percentCorrectBar + "%";
                     document.getElementById(
                         "resultBox"
                     ).innerHTML = `Results : ${percentCorrectBar}% <br> <span class="text-danger h6" >Proficieny FAILED. Passing score is 80% or above. You may request to try again in one week.</span>`;
-
                     //subscore bar
                     document
                         .getElementsByClassName("progress-bar")[3]
                         .setAttribute("style", "width:" + qtypeGrammar + "%");
-
                     document.getElementById("grammarResult").innerHTML = qtypeGrammar + "%";
-
                     document
                         .getElementsByClassName("progress-bar")[4]
                         .setAttribute("style", "width:" + qtypeContext + "%");
-
                     document.getElementById("contextResult").innerHTML = qtypeContext + "%";
-
                     document
                         .getElementsByClassName("progress-bar")[5]
                         .setAttribute("style", "width:" + qtypeIdiom + "%");
-
                     document.getElementById("idiomResult").innerHTML = qtypeIdiom + "%";
                 }
                 lvlsend(percentCorrectBar, "completed");
             }
-
             function showSolution() {
                 s.classList.remove("d-none");
             }
             function hideSolution() {
                 s.classList.add("d-none");
             }
-
             a.addEventListener("click", function () {
                 checkAnswer(a);
             });
-
             b.addEventListener("click", function () {
                 checkAnswer(b);
             });
-
             c.addEventListener("click", function () {
                 checkAnswer(c);
             });
-
             d.addEventListener("click", function () {
                 checkAnswer(d);
             });
             // qtype correct divided by X
-
             var correctCount = [];
             var progressDone = 0;
             var currentQuestion = [];
@@ -554,7 +461,6 @@
             function checkAnswer(ans) {
                 // console.log(currentQuestion.correct)
                 // console.log(ans.dataset.id)
-
                 if (ans.dataset.id === currentQuestion.correct) {
                     ans.classList.toggle("bg-success");
                     ans.classList.toggle("border-success");
@@ -576,32 +482,25 @@
                     document.getElementById("noCorrect").innerHTML =
                         correctCount.length + "/" + progressDone;
                 }
-
                 showSolution();
             }
-
             var choiceA = "A";
             var choiceB = "B";
             var choiceC = "C";
             var choiceD = "D";
             var correctChoice = "X";
             var q = 0;
-
             var qbox = document.getElementById("question");
             var cQuestion = "";
-
             function loadQuestion(q) {
                 if (q == 20) {
                     showResults();
                     //endtest // also if time runs out.
                     // console.log("fire show results", correctCount.length);
                 }
-
                 clicked = false;
-
                 // var randomItem = apiJson[Math.floor(Math.random() * apiJson.length)];
                 var randomItem = apiJson[q];
-
                 currentQuestion = randomItem;
                 choiceA = randomItem.choice1;
                 choiceB = randomItem.choice2;
@@ -630,11 +529,7 @@
                     "Solution: " +
                     randomItem.solution +
                     `<h6 class="text-primary my-3  ">
-
-
         <a href="/wistia.html" class="text-decoration-none" >${randomItem.tag}</a>
-
-
         </h6>`;
                 document.getElementById("qCount").innerHTML =
                     q +
@@ -644,13 +539,11 @@
             }
             // loadQuestion(q)
             document.getElementById("next").addEventListener("click", updateQuestion);
-
             function updateQuestion() {
                 progressDone += 5;
                 document
                     .getElementsByClassName("progress-bar")[1]
                     .setAttribute("style", "width:" + progressDone + "%");
-
                 a.classList.remove(
                     "bg-success",
                     "border-success",
@@ -683,47 +576,36 @@
                 loadQuestion(q);
                 q += 1;
             }
-
             // Init SpeechSynth API
             const synth = window.speechSynthesis;
-
             // DOM Elements
-
             const textInput = document.querySelector("#question");
             const readBtn = document.querySelector("#read");
-
             //Browser identifier
             // Firefox 1.0+
             var isFirefox = typeof InstallTrigger !== "undefined";
-
             // Chrome 1+
             var isChrome = !!window.chrome && !!window.chrome.webstore;
-
             // Init voices array
             let voices = [];
-
             const getVoices = () => {
                 voices = synth.getVoices();
-
                 // Loop through voices and create an option for each one
                 voices.forEach((voice) => {
                     // Create option element
                     const option = document.createElement("option");
                     // Fill option with voice and language
                     option.textContent = voice.name + "(" + voice.lang + ")";
-
                     // Set needed option attributes
                     option.setAttribute("data-lang", voice.lang);
                     option.setAttribute("data-name", voice.name);
                 });
             };
-
             //Line 35, 36 causes voice list duplication
             getVoices();
             if (synth.onvoiceschanged !== undefined) {
                 synth.onvoiceschanged = getVoices;
             }
-
             //Fix for duplication, run code depending on the browser
             if (isFirefox) {
                 getVoices();
@@ -733,7 +615,6 @@
                     synth.onvoiceschanged = getVoices;
                 }
             }
-
             // Speak
             const speak = () => {
                 // Check if speaking
@@ -744,37 +625,30 @@
                 if (textInput.value !== "") {
                     // Get speak text
                     const speakText = new SpeechSynthesisUtterance(cQuestion);
-
                     // Speak end
                     speakText.onend = (e) => {
                         console.log("Done reading...");
                     };
-
                     // Speak error
                     speakText.onerror = (e) => {
                         console.error("Something went wrong");
                     };
-
                     // Speak
                     synth.speak(speakText);
                 }
             };
-
             // EVENT LISTENERS
-
             // Text form submit
             readBtn.addEventListener("click", (e) => {
                 e.preventDefault();
                 speak();
             });
-
             function fetti() {
                 // If set to true, the user must press
                 // UP UP DOWN ODWN LEFT RIGHT LEFT RIGHT A B
                 // to trigger the confetti with a random color theme.
                 // Otherwise the confetti constantly falls.
                 var onlyOnKonami = false;
-
                 $(function () {
                     // Globals
                     var $window = $(window),
@@ -786,18 +660,14 @@
                         timer = undefined,
                         frame = undefined,
                         confetti = [];
-
                     var runFor = 5000;
                     var isRunning = true;
-
                     setTimeout(() => {
                         isRunning = false;
                     }, runFor);
-
                     // Settings
                     var konami = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65],
                         pointer = 0;
-
                     var particles = 150,
                         spread = 20,
                         sizeMin = 5,
@@ -810,7 +680,6 @@
                         dyMax = 0.18,
                         dThetaMin = 0.4,
                         dThetaMax = 0.7 - dThetaMin;
-
                     var colorThemes = [
                         function () {
                             return color(
@@ -854,12 +723,10 @@
                     function color(r, g, b) {
                         return "rgb(" + r + "," + g + "," + b + ")";
                     }
-
                     // Cosine interpolation
                     function interpolation(a, b, t) {
                         return ((1 - cos(PI * t)) / 2) * (b - a) + a;
                     }
-
                     // Create a 1D Maximal Poisson Disc over [0, 1]
                     var radius = 1 / eccentricity,
                         radius2 = radius + radius;
@@ -878,7 +745,6 @@
                                 b,
                                 c,
                                 d;
-
                             // Find where dart lies
                             for (i = 0, l = domain.length, measure = 0; i < l; i += 2) {
                                 (a = domain[i]), (b = domain[i + 1]), (interval = b - a);
@@ -889,7 +755,6 @@
                                 measure += interval;
                             }
                             (c = dart - radius), (d = dart + radius);
-
                             // Update the domain
                             for (i = domain.length - 1; i > 0; i -= 2) {
                                 (l = i - 1), (a = domain[l]), (b = domain[i]);
@@ -906,15 +771,12 @@
                                     if (b <= d) domain[i] = c; // Move interior (Right case)
                                     else domain.splice(i, 0, c, d); // Split interval
                             }
-
                             // Re-measure the domain
                             for (i = 0, l = domain.length, measure = 0; i < l; i += 2)
                                 measure += domain[i + 1] - domain[i];
                         }
-
                         return spline.sort();
                     }
-
                     // Create the overarching container
                     var container = document.createElement("div");
                     container.style.position = "fixed";
@@ -924,14 +786,12 @@
                     container.style.height = "0";
                     container.style.overflow = "visible";
                     container.style.zIndex = "9999";
-
                     // Confetto constructor
                     function Confetto(theme) {
                         this.frame = 0;
                         this.outer = document.createElement("div");
                         this.inner = document.createElement("div");
                         this.outer.appendChild(this.inner);
-
                         var outerStyle = this.outer.style,
                             innerStyle = this.inner.style;
                         outerStyle.position = "absolute";
@@ -940,7 +800,6 @@
                         innerStyle.width = "100%";
                         innerStyle.height = "100%";
                         innerStyle.backgroundColor = theme();
-
                         outerStyle.perspective = "50px";
                         outerStyle.transform = "rotate(" + 360 * random() + "deg)";
                         this.axis =
@@ -948,27 +807,23 @@
                         this.theta = 360 * random();
                         this.dTheta = dThetaMin + dThetaMax * random();
                         innerStyle.transform = this.axis + this.theta + "deg)";
-
                         this.x = $window.width() * random();
                         this.y = -deviation;
                         this.dx = sin(dxThetaMin + dxThetaMax * random());
                         this.dy = dyMin + dyMax * random();
                         outerStyle.left = this.x + "px";
                         outerStyle.top = this.y + "px";
-
                         // Create the periodic spline
                         this.splineX = createPoisson();
                         this.splineY = [];
                         for (var i = 1, l = this.splineX.length - 1; i < l; ++i)
                             this.splineY[i] = deviation * random();
                         this.splineY[0] = this.splineY[l] = deviation * random();
-
                         this.update = function (height, delta) {
                             this.frame += delta;
                             this.x += this.dx * delta;
                             this.y += this.dy * delta;
                             this.theta += this.dTheta * delta;
-
                             // Compute spline and convert to polar
                             var phi = (this.frame % 7777) / 7777,
                                 i = 0,
@@ -980,61 +835,49 @@
                                 (phi - this.splineX[i]) / (this.splineX[j] - this.splineX[i])
                             );
                             phi *= PI2;
-
                             outerStyle.left = this.x + rho * cos(phi) + "px";
                             outerStyle.top = this.y + rho * sin(phi) + "px";
                             innerStyle.transform = this.axis + this.theta + "deg)";
                             return this.y > height + deviation;
                         };
                     }
-
                     function poof() {
                         if (!frame) {
                             // Append the container
                             document.body.appendChild(container);
-
                             // Add confetti
-
                             var theme =
                                 colorThemes[onlyOnKonami ? (colorThemes.length * random()) | 0 : 0],
                                 count = 0;
-
                             (function addConfetto() {
                                 if (onlyOnKonami && ++count > particles) return (timer = undefined);
-
                                 if (isRunning) {
                                     var confetto = new Confetto(theme);
                                     confetti.push(confetto);
-
                                     container.appendChild(confetto.outer);
                                     timer = setTimeout(addConfetto, spread * random());
                                 }
                             })(0);
-
                             // Start the loop
                             var prev = undefined;
                             requestAnimationFrame(function loop(timestamp) {
                                 var delta = prev ? timestamp - prev : 0;
                                 prev = timestamp;
                                 var height = $window.height();
-
                                 for (var i = confetti.length - 1; i >= 0; --i) {
                                     if (confetti[i].update(height, delta)) {
                                         container.removeChild(confetti[i].outer);
                                         confetti.splice(i, 1);
                                     }
                                 }
-
                                 if (timer || confetti.length)
                                     return (frame = requestAnimationFrame(loop));
-
                                 // Cleanup
                                 document.body.removeChild(container);
                                 frame = undefined;
                             });
                         }
                     }
-
                     $window.keydown(function (event) {
                         pointer =
                             konami[pointer] === event.which
@@ -1045,13 +888,9 @@
                             poof();
                         }
                     });
-
                     if (!onlyOnKonami) poof();
                 });
             }
-
-
-
         </script>
 
 </html>

@@ -319,34 +319,6 @@
                     'The original sentence is a run on.  (C) "hobby; he" is the best answer because it appropriately uses a semi colon to punctuate the break between two independent clauses.',
             },
             {
-                id: 5,
-                question:
-                    "Feeling that the board of directors had too hastily settled several crucial issues: Chairman Wei Bo asked that further deliberation be given to his subordinate’s unconventional proposal.",
-                choice1: "NO CHANGE",
-                choice2: "issues, Chairman",
-                choice3: "issues Chairman",
-                choice4: "issues; Chairman",
-                correct: "issues, Chairman",
-                difficulty: 1,
-                tag: "Sentence Structure",
-                solution:
-                    'The original sentence incorrectly uses a colon at the end of dependent clause.  (B) "issues, Chairman" is the best answer because it appropriately uses a comma to punctuate the break between the dependent clause (Feeling that… issues) and the independent clause (Chairman Wei Bo … proposal.)',
-            },
-            {
-                id: 28,
-                question:
-                    "In his actions you can see that Chong not only understood the challenge and also the hidden lesson of his master.",
-                choice1: "NO CHANGE",
-                choice2: "but",
-                choice3: "as",
-                choice4: "for",
-                correct: "but",
-                difficulty: 2,
-                tag: "Transition",
-                solution:
-                    "The underlined portion of the sentence creates a transition error.  Choice B is the best answer because it properly introduces a correlative conjunction (not only understood the challenge but also the hidden lesson of his master.).  “not only . . . but also . . .” is the logical and coherent choice to communicate the correlative conjunction in this sentence. \r\n  \r\nChoices A, C, and D are incorrect because none of the transitions they offer logically fits the content that precedes or follows the proposed choice.",
-            },
-            {
                 id: 29,
                 question:
                     "Unlike other members of the bear family, which rely at least in part on a diet of leaves, fruits, roots, or other vegetation, but polar bears are primarily carnivorous, and eat mainly meat.",
@@ -492,7 +464,7 @@
 
             // var randomItem = Object.values(doneList).find(item => item.id === q);
             if (plusQ in doneList) {
-                console.log(doneList[plusQ])
+                // console.log(doneList[plusQ])
                 bgColor = 'pastel'
             }
 
@@ -550,6 +522,8 @@
             updateBar()
             clean()
 
+            console.log(doneList)
+
 
         }
 
@@ -559,7 +533,7 @@
         function updateBar() {
 
             progressDone = ((parseFloat((Object.keys(doneList).length) / (apiLen)).toFixed(2)) * 100)
-            console.log(progressDone)
+            // console.log(progressDone)
             document
                 .getElementsByClassName("progress-bar")[0]
                 .setAttribute("style", "width:" + progressDone + "%");
@@ -588,7 +562,7 @@
 
             colorBoxes()
             updateBar()
-
+            console.log(doneList)
 
         }
 
