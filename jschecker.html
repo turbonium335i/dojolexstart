@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>evo-ai</title>
+    <link rel="shortcut icon" type="image/png"
+        href="https://i.postimg.cc/TwPQwwDF/204-2049751-network-icon-red-network-icon-png.png" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+</head>
+
+<body class="bg-dark text-warning">
+
+    <div class="container p-3" id="ibox">
+
+    </div>
+</body>
+
+<script>
+    var sample = {
+        "1": "2",
+        "2": "2",
+        "3": "2"
+    }
+
+
+
+    function checkValue() {
+        // console.log(document.getElementById('f3').value)
+        document.querySelectorAll('.cbox').forEach(function (x, i) {
+            // console.log(i, x.value)
+            sample[i.toString()] = x.value
+        }
+        )
+        // console.log(sample)
+
+        var checkVal = []
+
+
+
+        // console.log(checkVal)
+
+        function checkduplicates() {
+            var dupval = checkVal.filter((item, index) => checkVal.indexOf(item) !== index)
+            console.log(dupval)
+            if (dupval.length > 0) {
+                console.log("duplicate")
+                // document.body.classList.remove('bg-dark')
+                // document.body.classList.add('bg-danger')
+            }
+        }
+
+        Object.keys(sample).forEach(function (key) {
+            // console.log('Key : ' + key + ', Value : ' + sample[key])
+            if (sample[key] !== '') {
+                checkVal.push(sample[key])
+            }
+
+        })
+
+        checkduplicates()
+
+
+
+    }
+
+
+    let parent = document.querySelector("#ibox");
+
+    function loadInputs() {
+        for (let i = 0; i < 27; i++) {
+
+            let p = document.createElement("row");
+
+            let d = document.createElement("span");
+            d.textContent = i + 1 + ". ";
+
+            let marker = document.createElement("input");
+            marker.setAttribute("id", `f${i + 1}`);
+            marker.setAttribute("class", `cbox`);
+            marker.setAttribute("name", `f${i + 1}`);
+            marker.setAttribute("maxlength", "5");
+            marker.setAttribute("size", "5");
+            marker.setAttribute("onchange", 'checkValue()');
+
+
+
+            let b = document.createElement("br");
+
+
+
+            p.appendChild(d);
+            p.appendChild(marker);
+            parent.appendChild(d);
+            parent.appendChild(p);
+            parent.appendChild(b);
+
+        }
+
+    }
+
+    loadInputs()
+</script>
+
+</html>
